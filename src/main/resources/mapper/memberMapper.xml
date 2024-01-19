@@ -1,0 +1,100 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.projectFinal.dao.MemberDao">
+
+
+	<select id="main">
+
+		select * from memberT where userId = #{userId}
+
+	</select>
+
+	<select id="login">
+
+		select *
+		from memberT
+		where userId = #{userId} and userPw = #{userPw}
+
+	</select>
+
+	<insert id="join">
+
+		insert into memberT(userId , userPw)
+		values(#{userId}
+		, #{userPw})
+	</insert>
+
+	<select id="find">
+
+		select count(*)
+		from memberT
+		where userId = #{userId}
+
+	</select>
+
+	<select id="info">
+
+		select * from memberT
+
+	</select>
+
+	<insert id="payDbSave">
+
+		insert into paymentT(userId, userCash,userPoint)
+		values(#{userId}, #{userCash},#{userPoint})
+
+	</insert>
+	<update id="updatePoint">
+
+		update memberT
+		set userPoint =
+		(select userPoint from memberT where userId = #{userId})+#{userPoint}
+		where
+		userId = #{userId}
+
+	</update>
+
+	<select id="saveDbDuo">
+
+		insert into duoT(userId,myPosition,tier,duoPosition,gameType,memo)
+		values(#{userId},#{myPosition},#{tier},#{duoPosition},#{gameType},#{memo});
+
+		select * from duoT order by dcnt desc limit 1;
+
+	</select>
+
+	<select id="duoInfo">
+
+		select * from duoT order by dcnt desc limit 10;
+
+	</select>
+
+	<select id="infoDuoT">
+
+		select * from duoT where dcnt = #{dcnt};
+
+	</select>
+		<delete id="deleteDuo">
+
+		delete from duoT where dcnt = #{dcnt};
+
+	</delete >
+		<select id="comparedcnt">
+
+		select * from duoT where dcnt = #{dcnt};
+
+	</select>
+
+	<select id="ajaxtest">
+
+		select count(*)
+		from memberT
+		where userId = #{userId}
+
+	</select>
+
+
+
+
+</mapper>

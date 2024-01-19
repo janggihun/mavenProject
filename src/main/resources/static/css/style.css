@@ -1,0 +1,13 @@
+
+
+#duoTable {
+	width: 1400px;
+ 	height: 50px;
+
+  /* 상하좌우 정중앙 정렬하기 */
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    
+}
