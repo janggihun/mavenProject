@@ -48,12 +48,12 @@
 						김창섭 <small class="text-body-secondary">#창렬하고섭섭하다</small>
 					</p>
 				</div>
-				<div class="content" id="tierbox">
+				<div class="tierbox" id="tierbox">
 					<div class="tierimage" id="tierimage">티어이미지넣는곳</div>
-					<div class="tier-info-box" id="tier-info">
+<!-- 					<div class="tier-info-box" id="tier-info"> -->
 						<div class="tiername" id="tiername">티어이름</div>
 						<div class="lp" id="lp">lp 적는곳고민중</div>
-					</div>
+<!-- 					</div> -->
 					<div class="win-lose-box" id="win-lose-box">
 						<div class="win-lose" id="win-lose">109승57패</div>
 						<div class="winning-percentage" id="winning-percentage">10.597%</div>

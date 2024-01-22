@@ -1,12 +1,12 @@
 /**
  * 
  */
-//let interval = setInterval(update, 4000)
-//
-//function stop() {
-//
-//	clearInterval(interval)
-//}
+let interval = setInterval(update, 4000)
+
+function stop() {
+
+	clearInterval(interval)
+}
 
 
 function update() {

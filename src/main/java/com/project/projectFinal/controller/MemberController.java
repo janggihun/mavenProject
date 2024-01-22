@@ -25,10 +25,7 @@ public class MemberController {
 	public String login(MemberDto memberDto, HttpSession session, Model model,RedirectAttributes redirectAttributes) {
 		
 		memberService.login(memberDto); //성공 or 실패시 에러
-		
-		//로그인 아이디 세션에 저장
 		session.setAttribute("userId", memberDto.getUserId());
-		
 		redirectAttributes.addFlashAttribute("msg","로그인성공");
 		return "redirect:/main";
 

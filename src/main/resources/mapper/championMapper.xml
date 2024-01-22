@@ -15,11 +15,56 @@
 		select champion_name_kr,champion_name from champName
 		where line like concat('%',#{line},'%');
 	</select>
-
-	<select id="itemTest">
-		SELECT item_id, COUNT(item_id) AS cnt 
-		FROM itemTest where champName = #{champName} 
-		GROUP BY item_id 
-		order by cnt desc 
-		limit 3;
+	
+	<select id="test">
+		select M.champName as myChampName, E.champName as enemyChampName
+		, round(count(case when M.win = 'True' then 1 end)/count(M.win)*100,2) as myWinRate
+		, count(case when M.win = 'True' then 1 end) as myChampWinCount, count(M.win)-count(case when M.win = 'True' then 1 end) as enemyChampWinCount
+		, M.name
+		from (select matchId, participantId, champName, line, team, win, itemId, tier, name from test11) M
+		join (select champName, matchId, line, participantId from test11) E
+		on M.matchId = E.matchId and M.line = E.line and M.participantId != E.participantId
+		where M.champName=#{myChampName} and E.champName = #{enemyChampName};
 	</select>
+	
+	<select id="test2">
+		select
+		M.champName as myChampName,
+		M.itemId,
+		count(M.itemId) as itemPickCount,
+		M.name
+		from (select matchId, participantId, champName, line, team, win, itemId, tier, name from test11) M
+		join (select matchId, participantId, champName, line, team, win, itemId, tier, name from test11) E
+		on M.matchId = E.matchId and M.line = E.line and M.participantId != E.participantId
+		where M.champName = #{myChampName} and E.champName = #{enemyChampName}
+		group by itemId
+		order by itemPickCount desc
+		limit 0,3;
+	</select>
+	
+	<select id="reChampList">
+		select champion_name,champion_name_kr from champName;
+	</select>
+	
+	<select id="test3">
+		select 
+		M.champName as myChampName,
+		E.champName as enemyChampName,
+		M.itemId,
+		count(if(M.win = 'True', M.itemId, null)) as myItemWinCount,
+		count(M.itemId) as itemPickCount,
+		round(count(case when M.win = 'True' then 1 end)/count(M.win)*100,2) as myItemWinRate,
+		M.name
+		from (select matchId, participantId, champName, line, team, win, itemId, tier, name from test11) M
+		join (select champName, matchId, line, participantId from test11) E
+		on M.matchId = E.matchId and M.line = E.line and M.participantId != E.participantId
+		where M.champName = #{myChampName} and E.champName = #{enemyChampName}
+		group by itemId
+		order by myItemWinRate desc
+		limit 0, 3;
+	</select>
+	
+	<select id="cntPickItem">
+		select count(itemId) as itemPickAllCount from test11 where champName = #{myChampName} and itemId = #{itemId};
+	</select>
+</mapper>

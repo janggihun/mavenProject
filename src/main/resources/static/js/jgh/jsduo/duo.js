@@ -68,13 +68,13 @@ $('#duoSearchBtn').on("click", function() {
 
 			document.getElementById('dcnt').value = parseInt(dcntvalue) + 1
 
-//			interval = setInterval(update, 4000)
+			interval = setInterval(update, 4000)
 
 
 		}, error: function(request, status, error) {
 			
 		
-//			interval = setInterval(update, 4000)
+			interval = setInterval(update, 4000)
 
 		}
 	})
