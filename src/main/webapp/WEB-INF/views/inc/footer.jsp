@@ -7,14 +7,9 @@
 <input type = "hidden" value = "${msg}" id = "msgFlag"/>
 <input type = "hidden" value = "${error}" id = "errorFlag"/>
 
-<script defer src="/js/aCommon/common.js"></script>
+
 <h1>copyright // 인천일보아카데미
 404호</h1>
-
-
-
-
-
 
 
 </div>

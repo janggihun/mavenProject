@@ -69,5 +69,8 @@ public class RestDuoController {
 		return duoService.nowlogin(duoSearchDto);
 
 	}
+	
+	
+	
 
 }

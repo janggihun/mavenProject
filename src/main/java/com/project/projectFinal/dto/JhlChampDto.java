@@ -14,8 +14,5 @@ public class JhlChampDto {
 	private String champion_name_kr;
 	private String champion_name;
 	private String champion_name_cons;
-	
-	private String champSearch;
-	
 	private String line;
 }

@@ -34,13 +34,11 @@
 
 	<!-- js들어갈자리  -->
 
-<<<<<<< HEAD
 
-<script defer src="/js/kjm/searchId.js"></script>
-=======
-	<script defer src="/js/aCommon/common.js"></script>
+
 	<script defer src="/js/kjm/searchId.js"></script>
->>>>>>> eef67d1a168425676fe87f5abf20e4639992d95a
+
+
 
 </body>
 

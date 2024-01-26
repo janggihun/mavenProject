@@ -3,45 +3,62 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<input type="hidden" value="${userId}" id="userIdcheck" />
-<!-- //작성자 -->
+
 <input type="hidden" value="" id="writter" />
+<!-- //작성자 -->
+
 <div class="modal_background"></div>
 <div class="modal_wrap">
-	<div class="modal_close">
-		<a href="#"><h2>x</h2></a>
-	</div>
 	<div class="modal2">
-		<h1 align="center">비회원은 채팅이 불가능합니다.</h1>
-		<h1>6시간 주기로 글 삭제</h1>
-		글번호 : <span id="dcntM"></span>
 
-		<div class="text" id="modalText">
-			<div>
-				<div class="right">
-
-					<h1>부검자리</h1>
-					<h1>전적자리</h1>
-					<h1>부검자리</h1>
-					<h1>전적자리</h1>
-
+<%@include file="chatmodal.jsp"%>
+		<div class="wrap">
+					
+			<div class="flagA">
+				<div class="tab">
+					<ul class="tabitems">
+						<li class="item"><a class="tablink active" href="#"
+							onclick="openTab(event, 'tabA')">듀오찾기</a></li>
+						<li class="item"><a class="tablink" href="#"
+							onclick="openTab(event, 'tabB')">전적검색</a></li>
+					</ul>
 				</div>
 
-				<div class="left">
-					<span id="duoPositionM"></span>유저를 찾는중...</br>
-					<p></p>
-					<!-- 				[[[<span id="myPositionM"></span>]]]유저 -->
-					<span id="userIdM"></span>님이 듀오를 구하고 있습니다.</br> ===== 원하는 사람 ===== </br> 원하는
-					티어 : <span id="tierM"></span></br> </br> 한줄메모 : <span id="memoM"></span></br> </br>
+				<!--tabA start-->
+				<div id="tabA" class="tabcontent" style="display: block;">
+
+					[[[<span id="duoPositionM"></span>]]]유저를 찾는중...</br> <span id="userIdM"></span>님이
+					듀오를 구하고 있습니다. </br> ==================================== </br> 원하는 티어 : <span
+						id="tierM"></span> </br> ==================================== </br> 한줄메모 : <span
+						id="memoM"></span></br> </br>
+
+					<!--tabA end-->
+					<!--tabB start-->
 				</div>
+				<div id="tabB" class="tabcontent" style="display: none;">
+
+
+					<h1 class=startSearch>
+						<a href="javascript:searchLol()">전적검색하기</a>
+					</h1>
+					<div id="aaa" align="center"></div>
+				</div>
+				<!--tabB end-->
+
+				<button id="duoParty" class="learn-more">듀오신청하기</button>
+				<button id="duoPartyCancel" style="display: none;">취소하기</button>
+
 			</div>
+			</br>
+		
+	
+
+	
+		 </br> <span id="flagcollapse"></span>
+
+
+			<!--tabB end-->
 
 		</div>
-
 	</div>
-	<div class="wrap">
-		<a href="#" class="duoP" id="duoParty">듀오 신청하기!</a>
-	</div>
-
 </div>
-
