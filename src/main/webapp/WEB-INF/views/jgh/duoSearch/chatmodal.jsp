@@ -5,7 +5,7 @@
 
 
 
-<div id=	'chatt'>
+<div id='chatt'>
 	<h1 id="hello">듀오 채팅</h1>
 	<input class="loginform" type='hidden' id='mid' disabled="disabled"> 
 
