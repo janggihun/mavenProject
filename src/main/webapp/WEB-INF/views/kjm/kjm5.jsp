@@ -92,7 +92,7 @@
 
 	<!-- js들어갈자리  -->
 
-	<script defer src="/js/aCommon/common.js"></script>
+
 	<script defer src="/js/kjm/searchId.js"></script>
 	<script defer src="/js/kjm/kjm.js"></script>
 	<script defer src="/js/kjm/Banner/banner.js"></script>

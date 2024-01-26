@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -45,8 +46,8 @@
 	<%@include file="modal1.jsp"%>
 	<!--   세부내용 -->
 	<%@include file="modal2.jsp"%>
-
-
+	<!--   채팅내용 -->
+	
 
 </body>
 </html>
