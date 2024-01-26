@@ -1,0 +1,114 @@
+.contents {
+	/*	height: 2100px;*/
+	display: flex;
+}
+
+.aside {
+	width: 700px;
+	border: 2px solid rgb(201, 252, 169);
+}
+
+.contentsItems {
+	display: flex;
+	/*	width: 2100px;*/
+	border: 1px solid lightpink;
+}
+
+.contentsItem {
+	width: 50%
+}
+
+.search_c {
+	width: 455px;
+	display: flex;
+	border: 1px solid rgb(159, 168, 218);
+}
+
+#searchChamp {
+	border: none;
+	width: 95%
+}
+
+input:focus {
+	outline: none;
+}
+
+.champImgItems {
+	width: 455px;
+	border: 1px solid rgb(159, 168, 218);
+}
+
+.se {
+	display: flex;
+	width: 90%;
+	margin-top: 10px;
+}
+
+.champs {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.champImgItem {
+	flex-direction: column;
+	display: flex;
+	width: 55px;
+	align-items: center;
+	margin: 5px;
+}
+
+.champImgItem:hover {
+	transform: scale(1.2);
+	transition: transform .5s;
+}
+
+
+
+.cimgs {
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.championImg {
+	margin: -3px;
+}
+
+.champName {
+	font-size: 12px;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 52px;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+
+#searchC {
+	border: none;
+	width: 300px;
+	height: 30px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
+.seletB {
+	border: none;
+	background-color: white;
+	width: 100px;
+	margin-bottom: 5px;
+}
+
+.seletB:hover {
+	background-color: lightblue;
+}
+
+.seletB:active {
+	border: none;
+	outline: none;
+}
+
+
+.LineB {
+	display: flex;
+	align-items: center;
+	border: 1px solid rgb(159, 168, 218);
+}

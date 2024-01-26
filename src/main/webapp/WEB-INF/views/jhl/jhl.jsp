@@ -6,107 +6,55 @@
 <head>
 <meta charset="UTF-8">
 <title>정혜린</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <!-- css들어갈자리  -->
-<style type="text/css">
-.contents {
-	height: 2100px;
-	display: flex;
-}
-
-.aside {
-	width: 700px;
-	background-color: rgb(201, 252, 169);
-}
-
-.contentsItems {
-	display: flex;
-	width: 2100px;
-}
-
-.champs {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-#searchC {
-	border: none;
-	width: 300px;
-	height: 30px;
-	margin-right: 10px;
-	margin-bottom: 5px;
-}
-
-.seletB {
-	border: none;
-	background-color: white;
-	width: 100px;
-	margin-bottom: 5px;
-}
-
-.seletB:hover {
-	background-color: lightblue;
-}
-
-.seletB:active {
-	border: none;
-	outline: none;
-}
-
-.contentsItem {
-	width: 50%;
-	background-color: orange;
-}
-
-.champImgItem {
-	text-align:center;	
-	flex-direction: column;
-	display: flex;
-	width: 54px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-.champImgItem:hover {
-	transform: scale(1.2);
-	transition: transform .5s;
-}
-
-.se {
-	display: flex;
-	width: 500px;
-	margin-top: 10px;
-}
-
-.championImg {
-	margin: 3px;
-}
-
-.champName {
-	font-size: 12px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	text-align:center;	
-}
-
-.LineB{
-display: flex;
-}
-</style>
+<link href="/css/jhl/champRank.css" rel="stylesheet">
 
 </head>
 
 <body>
-<%@include file="champRank.jsp"%>
-	
+	<%@include file="champRank.jsp"%>
+
 
 	<!-- js들어갈자리  -->
 
-	<script type="text/javascript">
-		
-	</script>
+
 
 </body>
+<script type="text/javascript">
+$('#champSearch').on('keyup', function () {
+    let searchChamp = $('#champSearch').val();
+	$('.champs').empty();
+    $.ajax({
+        type: "post",
+        url: "/champSearch",
+        data: { "champSearch": searchChamp},
+        success: function (res) {
+            let str1 = "<div class ='champImgItems'>";
+            let str2 = "<div class ='se'>";
+            let str3 = "<div class ='se_'> ";
+            let str4 = "<span>s</span>";
+            let str5 = "</div>";
+            let str6 = "<div class ='champs'> ";
+            let str7 = '';
+			
+           
+            for (let i = 0; i < res.length; i++) {
+                str7 += "<div class='champImgItem'><div class='cimgs'>";
+                str7 += "<img width='48' height='48' src='https://ddragon.leagueoflegends.com/cdn/14.2.1/img/champion/" + res[i].champion_name + ".png' class='championImg'></div>";
+            	
+                str7 += "<span class ='champName'>" + res[i].champion_name_kr + "</span></div>";
+            }
+            
+            let str8 = "</div>"
+            let str9 = "</div>";
+            let str10 = "</div>";
 
+            $('.se').html(str2+str3+str4+str5+str6+str7+str8+str9)
+           
+        }
+    });
+});
+
+</script>
 </html>

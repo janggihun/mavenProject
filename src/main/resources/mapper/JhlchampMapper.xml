@@ -3,60 +3,17 @@
 
 <mapper namespace="com.project.projectFinal.dao.JhlChampDao">
 
-<select id="ChampListImg1">
-select * from champName where champion_name_cons like 'ㄱ%';
+<select id="champListImg1">
+select * from champName;
 </select>
 
-<select id="ChampListImg2">
-select * from champName where champion_name_cons like 'ㄴ%';
+
+
+<select id="champSearch">
+select champion_name_kr, champion_name from champName where  champion_name_kr like concat(#{champSearch}, '%') or champion_name like concat(#{champSearch}, '%') 
+or champion_name_cons like concat(#{champSearch}, '%');
 </select>
 
-<select id="ChampListImg3">
-select * from champName where champion_name_cons like 'ㄷ%';
-</select>
 
-<select id="ChampListImg4">
-select * from champName where champion_name_cons like 'ㄹ%';
-</select>
-
-<select id="ChampListImg5">
-select * from champName where champion_name_cons like 'ㅁ%';
-</select>
-
-<select id="ChampListImg6">
-select * from champName where champion_name_cons like 'ㅂ%';
-</select>
-
-<select id="ChampListImg7">
-select * from champName where champion_name_cons like 'ㅅ%';
-</select>
-
-<select id="ChampListImg8">
-select * from champName where champion_name_cons like 'ㅇ%';
-</select>
-
-<select id="ChampListImg9">
-select * from champName where champion_name_cons like 'ㅈ%';
-</select>
-
-<select id="ChampListImg10">
-select * from champName where champion_name_cons like 'ㅊ%';
-</select>
-
-<select id="ChampListImg11">
-select * from champName where champion_name_cons like 'ㅋ%';
-</select>
-
-<select id="ChampListImg12">
-select * from champName where champion_name_cons like 'ㅌ%';
-</select>
-
-<select id="ChampListImg13">
-select * from champName where champion_name_cons like 'ㅍ%';
-</select>
-
-<select id="ChampListImg14">
-select * from champName where champion_name_cons like 'ㅎ%';
-</select>
 
 </mapper>
