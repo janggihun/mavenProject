@@ -3,7 +3,8 @@
  */
 
 function champ(a) {
-
+	
+	console.log(a);
 	$('.info').hide();
 		
 	if($('#lineCheck').text() == '') {
@@ -52,8 +53,6 @@ function submit(b) {
 	$('#' + c).html(str);
 	$('#' + d).html(b);
 	$('#champList').hide();
-	$('#searchChamp').hide();
-	$('.positionICN').hide();
 
 	if($('#myChampName').text() != ''){
 		if($('#enemyChampName').text() != ''){
@@ -61,3 +60,4 @@ function submit(b) {
 		}
 	}
 }
+

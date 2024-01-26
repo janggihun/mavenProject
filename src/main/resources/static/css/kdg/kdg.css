@@ -1,6 +1,4 @@
-* {
-    cursor: url(../../img/normal.png) 2 2, auto;
-}
+
 
 #myChampion {
 	width: 50%;
@@ -256,6 +254,8 @@ span {
 	
 	background-color: white;
 }
+
+
 /* #itemList #champs #item0 img { */
 /* 	border-radius: 50%; */
 /* 	border: 1px solid black; */

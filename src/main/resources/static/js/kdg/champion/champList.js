@@ -35,12 +35,15 @@ $(document).ready(function() {
 });
 
 function line(a){
-		$('#lineCheck').html(a);
+	$('#lineCheck').html(a);
+	
+	console.log(a);
 	
 	$('#champList').empty();
 	data = {
 		"line" : a
-	}
+		}
+		
  	$.ajax({
 		type : "POST",
 		url : "/kdg/position",
