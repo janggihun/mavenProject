@@ -51,5 +51,6 @@
 
 <script defer src ="/js/stm/joinId.js"></script>
 <script defer src ="/js/stm/loldata.js"></script>
+<script defer src="/js/stm/RiotGameTable.js"></script>
 </body>
 </html>

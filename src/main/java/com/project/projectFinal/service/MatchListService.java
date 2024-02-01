@@ -1,22 +1,23 @@
 package com.project.projectFinal.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.projectFinal.dao.StmUserListDao;
+import com.project.projectFinal.dao.RiotGameDao;
 import com.project.projectFinal.dto.RiotApiDto;
+import com.project.projectFinal.dto.RiotGameDto;
 
 @Service
 public class MatchListService {
 	@Autowired
 	WebMatchListService webmatchListService;
 	@Autowired
-	StmUserListDao stmChampListDao;
-	
+	RiotGameDao riotGameDao;
 	public String puuId(RiotApiDto userListDto) {
 		String puuid = webmatchListService.getpuuId(userListDto.getGameName(), userListDto.getTagLine());
 		  return puuid;
@@ -35,50 +36,61 @@ public class MatchListService {
 
 	public List<Map> gamedate(List<String> matchList) {
 		List<Map> MList = new ArrayList<>();
-		
-		
 		for(int i=0; i<matchList.size(); i++) {
 			Map gMap = webmatchListService.gamedate(matchList.get(i));
 			MList.add(gMap);
-			
 		}
 		return MList;
-		
-		
+	}
+
+	public void RiotGameInfo(Map<String, RiotGameDto> rMap) {
+		riotGameDao.RiotGameInfo(rMap);
+	}
+
+	public void RiotGameTeams(Map<String, RiotGameDto> rMap) {
+		riotGameDao.RiotGameTeams(rMap);
 		
 	}
 
-//	public List<String> DbMatchList(StmUserListDto userListDto) { 
-//		StmUserListDto MList = webmatchListService.MatchList(userListDto); // api에서 10게임 추출 
-//		int matchListCnt = 0;
-//		for(int i = 0; i<MList.getMatchId().size(); i++) {
-//
-//		int matchCnt = 	stmChampListDao.MatchList(MList.getMatchId().get(i));
-//		
-//		matchListCnt += matchCnt; 	
-//		}
-//		if(MList.getMatchId().size() == matchListCnt) {
-//			
-//			// 디비 바로 가면 됨
-//		}else { // 부족한 api 키 구하기
-//			int newMatchCnt = MList.getMatchId().size() - matchListCnt;
-//			String count = Integer.toString(newMatchCnt);
-//			
-//			List<String> NewMList = webmatchListService.newMatchList(count, userListDto);
-//			System.out.println("MLIst 사이즈"+NewMList.size());
-//			List<Map> newGList = new ArrayList<>();
-//			// 포문 굴리며 디비에 저장
-//			for(int i=0; i<NewMList.size(); i++) {
-//				Map gMap = webmatchListService.newGamedate(NewMList.get(i), userListDto);
-//				newGList.add(gMap);
-//				
-//			}
-//
-//		
-//		}
-//		
-//		return null;
-//	}
+	public void RiotGameBans(Map<String, RiotGameDto> rMap) {
+		riotGameDao.RiotGameBans(rMap);
+		
+	}
+
+	public List<HashMap<String, RiotGameDto>> RiotGameInfoSelect(String matchId) {
+		return riotGameDao.RiotGameInfoSelect(matchId);
+	}
+
+	public List<HashMap<String, RiotGameDto>> RiotGameTeamsSelect(String matchId) {
+		return riotGameDao.RiotGameTeamsSelect(matchId);
+		
+	}
+
+	public List<HashMap<String, RiotGameDto>> RiotGameBansSelect(String matchId) {
+		return riotGameDao.RiotGameBansSelect(matchId);
+		
+	}
+
+	public List<String> DBRiotGameMatchSelect(String gameName) {
+		 return riotGameDao.DBRiotGameMatchSelect(gameName);
+		
+	}
+
+	public List<Map> DbriotGameData(List<String> matchList) {
+		List<Map> MList = new ArrayList<>();
+		for(int i=0; i<matchList.size(); i++) {
+			Map gMap = riotGameDao.DbriotGameData(matchList.get(i));
+			MList.add(gMap);
+		}
+		System.out.println(MList);
+		return MList;
+	}
+
+	public int getMatchId(String matchId) {
+		int riotcount = riotGameDao.getMatchId(matchId);
+		return riotcount;
+	}
+
 
 	
 }
