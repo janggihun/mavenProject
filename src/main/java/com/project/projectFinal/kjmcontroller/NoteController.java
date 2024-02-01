@@ -23,10 +23,11 @@ public class NoteController {
 	NoteService noteService;
 	//쪽지함
 	@GetMapping("/Note")
-	public String Noteinfo(Model model) {
-		ArrayList<NoteDto> maillist= noteService.NoteInfo();
+	public String Noteinfo(Model model, HttpSession session, NoteDto noteDto) {
+		String userId = (String) session.getAttribute("userId");
+		noteDto.setUserId(userId);
+		ArrayList<NoteDto> maillist= noteService.NoteInfo(noteDto);
 		model.addAttribute("maillist", maillist);
-		
 		return "kjm/Note";	
 	}
 	

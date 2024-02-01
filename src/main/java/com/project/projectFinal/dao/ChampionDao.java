@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.project.projectFinal.dto.ChampionDto;
 import com.project.projectFinal.dto.ItemDto;
-import com.project.projectFinal.dto.itemToolTipDto;
+import com.project.projectFinal.dto.itemInfoDto;
 
 @Mapper
 public interface ChampionDao {
@@ -17,7 +17,21 @@ public interface ChampionDao {
 	public List<HashMap<String,String>> searchChamp(ChampionDto cDto);
 
 	public List<HashMap<String, String>> champLine(ChampionDto cDto);
+
+	public List<HashMap<String, ItemDto>> test(ItemDto iDto);
+
+	public List<HashMap<String, ItemDto>> test2(ItemDto iDto);
+
+	public List<HashMap<String, ItemDto>> test3(ItemDto iDto);
 	
 	public List<HashMap<String, String>> reChampList();
+
+	public int cntPickItem(int itemId, String myChampName);
+
+	public List<HashMap<String, ItemDto>> itemBuild(ItemDto iDto);
+
+	public List<HashMap<String, ItemDto>> itemBuildperTier(ItemDto iDto);
+
+	public List<itemInfoDto> itemInfo(int itemId);
 
 }

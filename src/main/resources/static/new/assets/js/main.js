@@ -3,6 +3,11 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+function hideDiv (){
+  document.getElementById("mainlogo").style.display="none";
+}
+self.setTimeout("hideDiv()",9000); // 초 지정
+
 
 (function($) {
 
@@ -121,3 +126,13 @@
 		});
 
 })(jQuery);
+
+//
+
+//$(document).ready(function (){
+//	  let main = document.getElementById("mainlogo").style.display="none";
+//	
+//	self.setTimeout(main,1000); // 초 지정
+//	
+//})
+

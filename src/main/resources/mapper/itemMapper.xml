@@ -46,6 +46,10 @@
 	<select id="itemToolTip">
 		select * from itemToolTipT where itemId = ${itemId}
 	</select>
+	
+	<select id="itemInfo">
+		select * from itemInfo_champNameT where tier = #{tier} and itemNum = ${itemNum}
+	</select>
 
 	
 </mapper>

@@ -10,13 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.projectFinal.dto.ChampionDto;
 import com.project.projectFinal.dto.ItemDto;
 import com.project.projectFinal.dto.itemInfoDto;
-import com.project.projectFinal.dto.itemToolTipDto;
 import com.project.projectFinal.service.ChampionService;
 import com.project.projectFinal.service.MainService;
-import com.project.projectFinal.service.itemService;
 
 import lombok.extern.slf4j.Slf4j;
-import retrofit2.http.POST;
 
 @Slf4j
 @RestController
@@ -24,9 +21,6 @@ public class kdgRestController {
 
 	@Autowired
 	ChampionService cs;
-	
-	@Autowired
-	itemService is;
 
 	@PostMapping("/kdg/search")
 	public List<HashMap<String, String>> search(ChampionDto cDto) {
@@ -52,32 +46,23 @@ public class kdgRestController {
 	@PostMapping("/kdg/itemBuild")
 	public List<HashMap<String, ItemDto>> itemBuild(ItemDto iDto) {
 
-		return is.itemBuild(iDto);
+		return cs.itemBuild(iDto);
 
 	}
 
 	@PostMapping("/kdg/itemBuildperTier")
 	public List<HashMap<String, ItemDto>> itemBuildperTier(ItemDto iDto) {
 
-		return is.itemBuildperTier(iDto);
+		return cs.itemBuildperTier(iDto);
 
 	}
 
 	@PostMapping("/kdg/itemInfo")
-	public List<itemToolTipDto> itemToolTip(itemToolTipDto iTTDto) {
+	public List<itemInfoDto> itemInfo(itemInfoDto iIDto) {
 		
-		int itemId = iTTDto.getItemId();
-		return is.itemToolTip(itemId);
+		int itemId = iIDto.getItemId();
+		return cs.itemInfo(itemId);
 
 	}
-	
-	@PostMapping("/kdg/test")
-	public void info() {
-		
-		
-		
-	}
-	
-
 
 }

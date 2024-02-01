@@ -1,7 +1,5 @@
 package com.project.projectFinal.stmController;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,11 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.google.gson.Gson;
+
+
 import com.project.projectFinal.dto.RiotApiDto;
-import com.project.projectFinal.dto.RiotGameDto;
 import com.project.projectFinal.service.MatchListService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -24,14 +24,17 @@ import lombok.extern.slf4j.Slf4j;
 public class RestMatchListController {
 	@Autowired
 	MatchListService matchListService;
+	
 
 	@PostMapping("/match/list")
 	public List<Map> matchList(RiotApiDto userListDto) {
 		RiotGameDto riotGameDto = new RiotGameDto();
 		String puuid = matchListService.puuId(userListDto);
-		userListDto.setPuuid(puuid);
 
+		userListDto.setPuuid(puuid);
+		
 		List<String> matchList = matchListService.MatchList(userListDto.getPuuid());
+
 		List<String> DbMatchList = matchListService.DBRiotGameMatchSelect(userListDto.getGameName());
 		if (DbMatchList.size() == 0) { // 만약 디비에 저장 데이터가 없을경우 바로 api 가기
 			System.out.println("DB에 데이터 없음. api로 감");
@@ -109,4 +112,5 @@ public class RestMatchListController {
 
 		return MList;
 	}
+
 }

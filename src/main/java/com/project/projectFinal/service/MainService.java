@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.projectFinal.dto.RiotApiDto;
-import com.project.projectFinal.dto.itemToolTipDto;
+import com.project.projectFinal.dto.itemInfoDto;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -30,7 +30,7 @@
 		<header id="header" class="alt">
 
 
-			<h1>데이터 붐입니다.</h1>
+			<img class = "mainlogo" id = "mainlogo" src = "../img/kjm/logo3.gif">
 		</header>
 		<span class="logo"><img src="images/logo.svg" alt="" /></span>
 		<h1 align="center">태민이 검색바</h1>

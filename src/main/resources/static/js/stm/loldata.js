@@ -5,17 +5,21 @@
 function gamebtn(i) {
 	var gametable = document.getElementById("gametable" + i + "");
 	gametable.style.display = ((gametable.style.display != 'none') ? 'none' : 'block');
+
 }
+
 $("#getpuuid").on("click", function() {
-	$('#newList').remove()
 	let gameName = $('#gameName').val();
 	let tagLine = $('#tagLine').val();
 	data = { 'gameName': gameName, 'tagLine': tagLine }
+	let str = ''
+	let team1 = ''
 	$.ajax({
 		type: 'post',
 		url: '/match/list',
 		data: data,
 		success: function(res) {
+
 			if (res != []) {
 				console.log("데이터 들어옴")
 				MList = [];
@@ -282,6 +286,7 @@ $("#getpuuid").on("click", function() {
 			//				
 			//				
 			//				
+
 
 		}
 	})

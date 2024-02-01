@@ -28,7 +28,7 @@ public class WebMatchListService {
 	}
 
 	public List<String> MatchList(String puuid) {
-		String count = "3"; // 인트쓰면 인식 못 함 (문자열로 써야함)
+		String count = "10"; // 인트쓰면 인식 못 함 (문자열로 써야함)
 
 		String url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid
 				+ "/ids?start=0&count=" + count + "&api_key=" + api_key;

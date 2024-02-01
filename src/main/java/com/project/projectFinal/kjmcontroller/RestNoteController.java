@@ -1,7 +1,10 @@
 package com.project.projectFinal.kjmcontroller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,8 +33,9 @@ public class RestNoteController {
 	   }
 	   
 		//쪽찌 자세히보기
-		@PostMapping("/detail")
-		public NoteDto detailNote(NoteDto noteDto) {
-			return noteService.detailNote(noteDto);
+		@GetMapping("/detail")
+		public ArrayList<NoteDto> detailNote(Model model, NoteDto noteDto) {
+			ArrayList<NoteDto> maillist= noteService.NoteInfo(noteDto);
+			return maillist;
 		}
 }
