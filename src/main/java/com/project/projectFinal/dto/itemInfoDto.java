@@ -1,32 +1,44 @@
 package com.project.projectFinal.dto;
 
-import java.util.List;
-
-import org.json.simple.JSONObject;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class itemInfoDto {
 	
+	private String tier;
 	private int itemId;
-	private String itemName;
-	private int totalGold;
-	private int sellGold;
-	private String comment;
-	private String info1;
-	private String info2;
-	private String info3;
-	private String info4;
-	private String info5;
-	private String info6;
-	private String info7;
-	private String info8;
-	private String info9;
+	private int itemNum;
+	
+	private String itemPickChamp1;
+	private int itemPickCnt1;
+	private String itemPickChamp2;
+	private int itemPickCnt2;
+	private String itemPickChamp3;
+	private int itemPickCnt3;
+	private String itemPickChamp4;
+	private int itemPickCnt4;
+	private String itemPickChamp5;
+	private int itemPickCnt5;
+	
+	private int itemCnt;
+	private int allItemCnt;
+	private int itemWinCnt;
+	
+	private String line1;
+	private int lineCnt1;
+	private String line2;
+	private int lineCnt2;
+	private String line3;
+	private int lineCnt3;
+	private String line4;
+	private int lineCnt4;
+	private String line5;
+	private int lineCnt5;
+	
+	private int lineAllCnt;
 
 }
-

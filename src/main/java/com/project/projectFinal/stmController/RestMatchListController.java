@@ -1,13 +1,20 @@
 package com.project.projectFinal.stmController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.google.gson.Gson;
 import com.project.projectFinal.dto.RiotApiDto;
+import com.project.projectFinal.dto.RiotGameDto;
 import com.project.projectFinal.service.MatchListService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,31 +24,89 @@ import lombok.extern.slf4j.Slf4j;
 public class RestMatchListController {
 	@Autowired
 	MatchListService matchListService;
-	
 
 	@PostMapping("/match/list")
 	public List<Map> matchList(RiotApiDto userListDto) {
+		RiotGameDto riotGameDto = new RiotGameDto();
 		String puuid = matchListService.puuId(userListDto);
-		
 		userListDto.setPuuid(puuid);
-		
+
 		List<String> matchList = matchListService.MatchList(userListDto.getPuuid());
+		List<String> DbMatchList = matchListService.DBRiotGameMatchSelect(userListDto.getGameName());
+		if (DbMatchList.size() == 0) { // 만약 디비에 저장 데이터가 없을경우 바로 api 가기
+			System.out.println("DB에 데이터 없음. api로 감");
+			List<Map> MList = matchListService.gamedate(matchList);
+			return MList;
+		}
+		int Dbcount = 0; // 디비에 있는지 확인을 위하여 카운트
+		for (int i = 0; i < matchList.size(); i++) { // 디비랑 비교
+			int Db = matchListService.getMatchId(matchList.get(i));
+			Dbcount += Db;
+		}
+//		System.out.println(userListDto.getMatchId());
+		if (Dbcount == 0) { // 만약 디비에 정보가 없을경우
+			System.out.println("api감");
+			List<Map> MList = matchListService.gamedate(matchList);
+			return MList;
+		} else { // 디비에 정보가 다 있다면
+			return null;
+		}
+
+	}
+
+	@PostMapping("/riot/api")
+	public void RiotGameapi(String Mlist) throws JsonMappingException, JsonProcessingException {
+		RiotGameDto riotGameDto = new RiotGameDto();
+		Gson gson = new Gson();
+		ArrayList<HashMap<String, ArrayList<HashMap<String, String>>>> map1 = gson.fromJson(Mlist, ArrayList.class);
+
+		int res = 0;
+		for (int i = 0; i < map1.size(); i++) {
+			Map response = map1.get(i);
+
+			List info = (List) response.get("info");
+			for (int j = 0; j < info.size(); j++) {
+				Map RiotInfo = (Map) info.get(j);
+				matchListService.RiotGameInfo(RiotInfo);
+			}
+			List teams = (List) response.get("teams");
+			for (int j = 0; j < teams.size(); j++) {
+				Map RiotTeams = (Map) teams.get(j);
+				matchListService.RiotGameTeams(RiotTeams);
+			}
+			if (response.get("bans") == null) {
+				res += 1;
+			} else {
+				List bans = (List) response.get("bans");
+				for (int j = 0; j < bans.size(); j++) {
+					Map RiotBans = (Map) bans.get(j);
+					matchListService.RiotGameBans(RiotBans);
+				}
+			}
+
+		}
+
+	}
+
+	@PostMapping("/riot/game")
+	public ArrayList<HashMap<String, Object>> RiotGame(RiotApiDto userListDto) {
+		System.out.println("디비에서 데이터 가져옴");
+		String puuid = matchListService.puuId(userListDto);
+		userListDto.setPuuid(puuid);
+		List<String> matchList = matchListService.MatchList(userListDto.getPuuid());
+		ArrayList<HashMap<String, Object>> MList = new ArrayList<>();
+		HashMap<String, Object> newGList = new HashMap<>();
+		for (int i = 0; i < matchList.size(); i++) {
+			List<HashMap<String, RiotGameDto>> infoData = matchListService.RiotGameInfoSelect(matchList.get(i));
+			List<HashMap<String, RiotGameDto>> teamsData = matchListService.RiotGameTeamsSelect(matchList.get(i));
+			List<HashMap<String, RiotGameDto>> bansData = matchListService.RiotGameBansSelect(matchList.get(i));
+			newGList.put("bans",bansData);
+			newGList.put("teams",teamsData);
+			newGList.put("info", infoData);
+			MList.add(newGList);
+		}
 		
-		List<Map> MList = matchListService.gamedate(matchList);
+
 		return MList;
 	}
-	
-//	@PostMapping("/match/list")
-//	public List<String> matchList(StmUserListDto userListDto) {
-//		String puuid = matchListService.puuId(userListDto);
-//		
-//		userListDto.setPuuid(puuid);
-//		
-//		List<String> matchList = matchListService.DbMatchList(userListDto);
-//		return matchList;
-////		List<Map> MList = matchListService.gamedate(matchList);
-////		return MList;
-////	}
-//	
-//	}
 }

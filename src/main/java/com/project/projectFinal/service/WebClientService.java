@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.project.projectFinal.dto.RiotApiDto;
-import com.project.projectFinal.dto.itemInfoDto;
+import com.project.projectFinal.dto.itemToolTipDto;
 
 import lombok.extern.slf4j.Slf4j;
 

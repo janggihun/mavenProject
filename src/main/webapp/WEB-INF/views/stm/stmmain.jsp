@@ -26,7 +26,7 @@
 <body>
 <%@include file="../inc/header.jsp" %>
 <div align="center">
-<input type="text" id="gameName" name="gameName" placeholder="아이디" value="깡통차기국내1위">
+<input type="text" id="gameName" name="gameName" placeholder="아이디" value="동정팔이소년">
 <input type="text" id="tagLine" name ="tagLine" placeholder="태그" value="KR1">
 <button id="getpuuid">검색</button>
 </div>
@@ -51,5 +51,6 @@
 
 <script defer src ="/js/stm/joinId.js"></script>
 <script defer src ="/js/stm/loldata.js"></script>
+<script defer src="/js/stm/RiotGameTable.js"></script>
 </body>
 </html>

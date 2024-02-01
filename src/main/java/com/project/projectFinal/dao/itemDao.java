@@ -18,6 +18,4 @@ public interface itemDao {
 
 	public List<itemToolTipDto> itemToolTip(int itemId);
 
-	public List<HashMap<String, itemInfoDto>> itemInfo(itemInfoDto iIDto);
-
 }

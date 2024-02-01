@@ -18,9 +18,9 @@ public class NoteService {
 	@Autowired
 	NoteDao noteDao;
 
-	public ArrayList<NoteDto> NoteInfo(NoteDto noteDto) {
+	public ArrayList<NoteDto> NoteInfo() {
 
-		ArrayList<NoteDto> maillist = noteDao.NoteInfo(noteDto);
+		ArrayList<NoteDto> maillist = noteDao.NoteInfo();
 		return maillist;
 	}
 
@@ -33,6 +33,10 @@ public class NoteService {
 		noteDao.DeleteNote(num);
 	}
 
+	public NoteDto detailNote(NoteDto noteDto) {
+		
+		return noteDao.detailNote(noteDto);
+	}
 
 	public ArrayList<NoteDto> selectNoteById(String sendId) {
 		ArrayList<NoteDto> select = noteDao.selectNoteById(sendId);

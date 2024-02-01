@@ -3,7 +3,7 @@
  */
 
 
-function test(a){
+function itemToolTip(a){
 	
 	data = {
 		"itemId" : a

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   	
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,32 +18,29 @@
 			</div>
 			<div class="close-area">X</div>
 			<div class="content">
-
-
-				<table border="1">
+				<table border ="1">
 
 					<thead>
 						<tr>
 							<th>제목</th>
-							<td id="title"></td>
 						</tr>
 						<tr>
 							<th>보낸사람</th>
-							<td id="recvuser"></td>
 						</tr>
 						<tr>
-							<th>보낸사람</th>
-							<td id="sendusder"></td>
+							<th>받는사람</th>
 						</tr>
 						<tr>
 							<th>날짜</th>
-							<td id="date"></td>
 						</tr>
 						<tr>
-							<th>내용</th>
-							<td class="contents" id="message"></td>
+						<th class = "contents">내용</th>
 						</tr>
+
 					</thead>
+					<tbody id="detailflag">
+
+					</tbody>
 				</table>
 
 			</div>

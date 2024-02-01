@@ -28,7 +28,7 @@ public class WebMatchListService {
 	}
 
 	public List<String> MatchList(String puuid) {
-		String count = "10"; // 인트쓰면 인식 못 함 (문자열로 써야함)
+		String count = "3"; // 인트쓰면 인식 못 함 (문자열로 써야함)
 
 		String url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid
 				+ "/ids?start=0&count=" + count + "&api_key=" + api_key;
@@ -52,37 +52,4 @@ public class WebMatchListService {
 		return response;
 
 	}
-//	public List<String> newMatchList(String count, StmUserListDto userListDto) {
-//		String url = "https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/" + userListDto.getPuuid()
-//				+ "/ids?start=0&count=" + count + "&api_key=" + api_key;
-//
-//		WebClient webClient = WebClient.builder().baseUrl(url).build();
-//		
-//		List<String> response = webClient.get().uri(uriBuilder -> uriBuilder.build()).retrieve().bodyToMono(List.class)
-//				.block();
-//		userListDto.setMatchId(response);
-//		return response;
-//		
-//	}
-//
-//	public Map newGamedate(String matchList,StmUserListDto userListDto) {
-//		String url = "https://asia.api.riotgames.com/lol/match/v5/matches/" + matchList + "?api_key=" + api_key;
-//		WebClient webClient = WebClient.builder().baseUrl(url).build();
-//		
-//		Map response = webClient.get().uri(uriBuilder -> uriBuilder.build()).retrieve().bodyToMono(Map.class).block();
-//		
-//		Map response1 = (Map) response.get("info");
-//		List response2 =  (List) response1.get("participants");
-//		for(int i = 0; i<response2.size();  i++) {
-//			Map response3 =  (Map) response2.get(i);
-//			response3.get("riotIdGameName");
-//			
-//		
-//		}
-//		
-//		
-//		return response;
-//	
-//	}
-
 }

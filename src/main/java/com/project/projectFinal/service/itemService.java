@@ -40,11 +40,5 @@ public class itemService {
 		
 	}
 
-	public List<HashMap<String, itemInfoDto>> itemInfo(itemInfoDto iIDto) {
-		
-		return id.itemInfo(iIDto);
-		
-	}
-
 	
 }

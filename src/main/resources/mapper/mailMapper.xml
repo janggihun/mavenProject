@@ -4,20 +4,24 @@
 
 	<insert id="mailsend">
 		insert into
-		NoteTableT(userId,recv_userId,send_userId,n_title,n_message)
-		values(#{userId},#{recv_userId},#{send_userId},#{n_title},#{n_message})
+		NoteTable(recv_userId,send_userId,n_title,n_message)
+		values(#{recv_userId},#{send_userId},#{n_title},#{n_message})
 	</insert>
 
 	<select id="NoteInfo">
-		select * from NoteTableT where #{userId} = send_userId order by n_num DESC limit 10;
+		select * from NoteTable FULL join memberT where send_userId = memberT.userId and recv_userId != memberT.userId order by n_num DESC limit 10;
+	</select>
+
+	<select id="detailNote">
+		select * from NoteTable where n_num = #{n_num}
 	</select>
 
 	<delete id="DeleteNote">
-		delete from NoteTableT where n_num = #{n_num}
+		delete from NoteTable where n_num = #{n_num}
 	</delete>
 
 	<select id="findId">
-		select count(*) from NoteTableT 
+		select count(*) from NoteTable 
 		FULL join memberT where memberT.userId = #{send_userId};
 	</select>
 	
