@@ -1,6 +1,7 @@
 package com.project.projectFinal.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -35,9 +36,9 @@ public class MatchListService {
 
 	public List<Map> gamedate(List<String> matchList) {
 		List<Map> MList = new ArrayList<>();
-//		System.out.println(matchList);
-		for(String i : matchList) {
-			Map gMap = webmatchListService.gamedate(i);
+		System.out.println(matchList);
+		for(int i=0; i<matchList.size(); i++) {
+			Map gMap = webmatchListService.gamedate(matchList.get(i));
 			MList.add(gMap);
 		}
 //		System.out.println(MList);

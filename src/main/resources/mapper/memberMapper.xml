@@ -113,16 +113,10 @@
 	</select>
 
 	<select id="findId">
-		select userId from memberT where userEmail = #{userEmail};
-	</select>
-	
-	<select id="findPw">
-		select count(*) from memberT where userId = #{userId} and userEmail = #{userEmail};  
+		select * from memberT where userEmail = #{userEmail};
 	</select>
 
-	<update id="changePw">
-		update memberT set userPw = #{userPw} where userId = #{userId};
-	</update>
+	
 
 	
 

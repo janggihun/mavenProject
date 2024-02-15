@@ -4,23 +4,29 @@
 <mapper namespace="com.project.projectFinal.dao.ChampionDao">
 
 	<select id="champList">
-		select * from champListT;
+		select * from champListT order by champion_name_kr asc;
 	</select>
 	
 	<select id="searchChamp">
 		select champion_name_kr,champion_name 
 		from champListT
-		where champion_name_kr like concat('%',#{searchChamp},'%') or champion_name like concat('%',#{searchChamp},'%') or champion_name_cons like concat('%',#{searchChamp},'%');
+		where champion_name_kr like concat('%',#{searchChamp},'%') or champion_name like concat('%',#{searchChamp},'%') or champion_name_cons like concat('%',#{searchChamp},'%')
+		order by champion_name_kr asc;
 	</select>
 	
 	<select id="champLine">
 		select champion_name_kr,champion_name
 		from champListT
-		where line like concat('%',#{line},'%');
+		where line like concat('%',#{line},'%')
+		order by champion_name_kr asc;
+	</select>
+	
+	<select id="allChampLine">
+		select champion_name_kr,champion_name from champListT order by champion_name_kr asc;
 	</select>
 	
 	<select id="reChampList">
-		select champion_name,champion_name_kr from champListT;
+		select champion_name,champion_name_kr from champListT order by champion_name_kr asc;
 	</select>
 	
 </mapper>

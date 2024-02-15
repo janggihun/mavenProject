@@ -1,0 +1,53 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.projectFinal.dao.RiotGameDao">
+	<insert id="RiotGameInfo">
+		insert IGNORE into RiotGameInfoT values
+		(#{matchId},#{championName},default,#{riotIdGameName},
+		#{riotIdTagline},#{summonerName},#{participantId},#{queueId},#{teamId},#{lane},#{kills},
+		#{assists},#{deaths},#{kda},#{firstBloodKill},#{gameEndTimestamp},
+		#{gameStartTimestamp},#{totalAllyJungleMinionsKilled},#{totalDamageDealtToChampions},
+		#{totalDamageTaken},#{totalEnemyJungleMinionsKilled},#{totalMinionsKilled},
+		#{wardsKilled},#{wardsPlaced},#{win});
+
+
+		update RiotGameInfoT R
+		join champListT C
+		on R.championName = C.champion_name
+		set R.champion_name_kr = C.champion_name_kr
+		where R.matchId = #{matchId};
+	</insert>
+	<insert id="RiotGameTeams">
+		insert IGNORE into RiotGameTeamsT values
+		(#{matchId},#{teamId},#{kills},#{dragon});
+	</insert>
+	<insert id="RiotGameBans">
+		insert IGNORE into RiotGameBansT values
+		(#{matchId},#{championId},#{teamId});
+	</insert>
+	<select id="RiotGameInfoSelect">
+		select * from RiotGameInfoT where matchId =
+		#{matchId} order by participantId asc;
+	</select>
+	<select id="RiotGameTeamsSelect">
+		select * from RiotGameTeamsT where matchId =
+		#{matchId}
+	</select>
+	<select id="RiotGameBansSelect">
+		select * from RiotGameBansT where matchId =
+		#{matchId}
+	</select>
+	<select id="DBRiotGameMatchSelect">
+		select matchId from RiotGameInfoT where
+		riotIdGameName =#{gameName} group by
+		matchId;
+	</select>
+	<select id="DbriotGameData">
+		select * from RiotGameInfoT where matchId =
+		#{matchId}
+	</select>
+	<select id="getMatchId">
+		select count(*) from RiotGameInfoT where matchId =
+		#{matchId}
+	</select>
+</mapper>

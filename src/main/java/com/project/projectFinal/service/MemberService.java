@@ -124,29 +124,13 @@ public class MemberService implements UserDetailsService {
 		return  memberDao.minusRoulette(memberDto);
 	}
 
-	public MemberDto findId(MemberDto memberDto) {
-		log.info("=====서비스={}",memberDto);
-		return memberDao.findId(memberDto);
-		
-	}
-
-	public boolean findPw(MemberDto memberDto) {
-		boolean findPw = memberDao.findPw(memberDto);
-		if(findPw) {
-			return findPw;
+	public boolean findId(MemberDto memberDto) {
+		boolean findId = memberDao.findId(memberDto);
+		if(findId) {
+			return findId;
 		}else {
 			return false;
 		}
-		
-	}
-	public int changePw(MemberDto memberDto) {
-		MemberDto mDto = new MemberDto();
-		mDto.setUserId(memberDto.getUserId());
-		mDto.setUserPw(passwordEncoder.encode(memberDto.getUserPw()));
-		log.info("==mdto = {}",mDto);
-		int result = memberDao.changePw(mDto);
-		log.info("====비밀번호변경=={}",result);
-		return result;
 		
 	}
 }

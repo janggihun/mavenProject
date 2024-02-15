@@ -1,0 +1,60 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.projectFinal.dao.DuoDao">
+	<select id="duoInfo">
+
+		select * from duoT order by rCnt desc limit 10;
+
+	</select>
+	<select id="chattRoomInfo">
+		select * from duoChattRoomT where (hostId = #{userId}
+		|| guestId = #{userId}) order by rCnt desc
+	</select>
+
+	<select id="infoDuoT">
+
+		select * from duoT where rCnt = #{rCnt};
+
+	</select>
+	<select id="myRoomCheck">
+
+		update duoChattRoomT
+		set guestId = ''
+		where rCnt = #{rCnt} and guestId = #{userId};
+
+		update duoChattRoomT
+		set hostId = ''
+		where rCnt = #{rCnt} and hostId = #{userId};
+
+
+		select * from
+		duoChattRoomT
+		where rCnt =
+		#{rCnt}
+	</select>
+
+
+	<select id="msgAll">
+		select * from msgT where rCnt = #{rCnt} order by
+		autocnt
+	</select>
+
+
+	<delete id="deleteChattRoom">
+
+		delete from duoChattRoomT where rCnt=#{rCnt}
+
+	</delete>
+	<select id="nowlogin">
+
+		select userId , loginNow from memberT where userId =
+		#{friendId};
+
+	</select>
+		<delete id = "delete">
+	
+	delete from duoT where rCnt = #{rCnt} and userId = #{userId}
+	
+	</delete>
+</mapper>

@@ -1,0 +1,176 @@
+
+@charset "UTF-8";
+#Sform {
+          display: inline-block;
+          text-align: center;
+        }
+#container1 {
+    width: 1080px;
+    height: 2000px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: wihte;
+}
+#div1{
+	text-align : center;
+}
+
+#header-profile-info{
+	width : 1000px;
+	height : 200px;
+	margin : 0 auto;
+	background-color : white;
+	
+}
+#profile-icon{
+	width : 100px;
+	height : 100px;
+	float : left;
+	background-color : black;
+}
+#profile-name{
+	float : left;
+	width : 390px;
+	margin-left: 10px;
+}
+
+#tierbox{
+	width : 500px;
+	height : 200px;
+	float : right;
+	background-color : white;
+	border: 1px solid black;
+}
+#tierimage{
+	width : 29%;
+	height : 100px;
+	float : left;
+	margin : 10px;
+	background-color : lightblue;
+	border: 1px solid black;	
+}
+#tier-info{
+	width: 29%;
+	height : 120px;
+	float : left;
+	margin : 10px;
+}
+
+#tiername{
+	width : 150px;
+	height : 80px;
+	margin : 0 auto;
+	text-align : center;
+	background-color : lightblue;
+	border: 1px solid black;	
+}
+#lp{
+	width : 150px;
+	height : 40px;
+	margin :  0 auto;
+	text-align : center;
+	background-color : lightblue;
+	border: 1px solid black;
+}
+
+#win-lose-box{
+	width: 29%;
+	height : 120px;
+	float : left;
+	margin : 10px;
+	background-color : lightblue;
+	border: 1px solid black;	
+}
+#win-lose{
+	width : 145px;
+	height : 60px;
+	text-align : center;
+	border: 1px solid black;
+}
+#winning-percentage{
+	width : 145px;
+	height : 60px;
+	text-align : center;
+	border: 1px solid black;
+	
+}
+
+#chartandmsg{
+	width : 1000px;
+	height : 150px;
+	margin-top : 50px;
+	background-color : white;
+}
+#chart{
+	width : 29%;
+	height : 100px;
+	float : left;
+	margin : 10px;
+	border : 1px solid black;
+}
+#img{
+	width : 29%;
+	height : 100px;
+	float : left;
+	margin : 10px;
+	border : 1px solid black;
+}
+#msg{
+	width : 29%;
+	height : 100px;
+	float : left;
+	margin : 10px;
+	text-align : center;
+	border : 1px solid black;
+}
+#matches{
+	width : 1000px;
+	height :800px;
+	margin-top : 30px;
+	background-color : white;
+}
+#itemImage{
+	border : 1px solid black;
+}
+#itemTitle1{
+	border : 1px solid black;
+	width : 50%;
+	height : 100px;
+	float : left;
+	text-align : center;
+}
+#itemTitle2{
+	border : 1px solid black;
+	width : 50%;
+	height : 100px;
+	float : left;
+	text-align : center;
+}
+#itemImage1{
+	border : 1px solid black;
+	width : 50%;
+	height : 100px;
+	float : left;
+}
+#itemImage2{
+	width : 50%;
+	height : 100px;
+	float : left;
+	border : 1px solid black;
+}
+#sideBanner1 {
+  position: absolute;
+  width: 200px;
+  height: 800px;
+  top: 50px;
+  background-color: #999900;
+  color: green;
+}
+#sideBanner2 {
+  position: absolute;
+  width: 200px;
+  height: 800px;
+  right: 50px;
+  background-color: #999900;
+  color: green;
+}

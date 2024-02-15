@@ -1,0 +1,30 @@
+	/*공통*/
+	
+	
+	select::-ms-expand { 
+	display: none; /*익플 10,11이상. 화살표 감추기*/ 
+	}
+	
+	/*select디자인 시작*/
+	select{ 
+	width:200px; 
+	height:35px; 
+	padding:0 4px; 
+	
+	-webkit-appearance:none;/*select 내부 스타일 제거 (화살표 제거)*/ 
+	-moz-appearance:none; 
+	-o-appearance:none; 
+	appearance:none; 
+	
+	/* background:#fff url('select.jpg')no-repeat center right;화살표 이미지 넣기  */
+	
+	/*디자인*/ 
+	border-radius:4px; 
+	border:1px solid #fff; 
+	
+	border-style:inset;/*select 내부 그림자*/ 
+	-moz-box-shadow: inset 1px 1px 3px rgba(0,38,95,1); 
+	-webkit-box-shadow: inset 1px 1px 3px rgba(0,38,95,1); 
+	box-shadow: inset 1px 1px 3px rgba(0,38,95,1); 
+	
+	}

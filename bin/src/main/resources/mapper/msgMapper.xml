@@ -1,0 +1,55 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.projectFinal.dao.MsgDao">
+
+	<select id="roomUpdate">
+
+		insert IGNORE into
+		duoT(userId,myPosition,tier,duoPosition,gameType,memo)
+		values(#{userId},#{myPosition},#{tier},#{duoPosition},#{gameType},#{memo});
+
+		select * from duoT order by rCnt desc limit 1;
+
+	</select>
+
+	<insert id="insertMsg">
+		insert IGNORE into msgT(rCnt,userId,msg)
+		values(#{rCnt},#{userId},#{msg});
+
+
+	</insert>
+
+
+	<select id="connectRoom">
+
+		insert IGNORE into duoChattRoomT(rCnt,
+		hostId,guestId)
+		values(#{rCnt},#{hostId},#{guestId});
+
+		delete from
+		duoT
+		where rCnt =
+		#{rCnt};
+
+		select * from duoChattRoomT where rCnt = #{rCnt};
+	</select>
+
+	<select id="chattInfo">
+
+		select * from duoChattRoomT where rCnt = #{rCnt};
+
+
+	</select>
+	<select id="duoInfo">
+
+		select * from duoT where rCnt = #{rCnt};
+
+
+	</select>
+
+
+
+
+
+</mapper>

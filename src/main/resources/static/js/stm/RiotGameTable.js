@@ -25,20 +25,15 @@ function showGameTamble(res, data) {
 		spentTime = day + "일 전";
 	}
 	//	}
-	for (let j = 0; j < res[0]['info'].length; j++) {
-		if (data['gameName'] == res[0]["info"][j]['riotIdGameName'] || data['gameName'] == res[0]["info"][j]['summonerName']) {
-			profileIcon = res[0]["info"][j]['profileIcon']
-			summonerLevel = res[0]["info"][j]['summonerLevel']
-		}
-	}
+
 	str += "<div id = 'newList'>"
 	str += "<div class='profile-header'>"
 	str += "<div class='left'>"
 	str += "<div class='left-top'>"
-	str += "<div class='p-c-img'><img width='100' height='100'  alt='못 불러옴	' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/profileicon/" + profileIcon + ".png'></div>"
+	str += "<div class='p-c-img'>플레이어 아이콘</div>"
 	str += "<div class='p-info'>"
 	str += "<div class='p-name'>" + data['gameName'] + "</div>"
-	str += "<div class='p-level'>플레이어레벨 : " + summonerLevel + "</div>"
+	str += "<div class='p-level'>플레이어레벨</div>"
 	str += "<div class='playgames'>최근게임 : " + spentTime + " </div>"
 	str += "</div>"
 	str += "</div>"
@@ -80,8 +75,6 @@ function showGameTamble(res, data) {
 				queue = "솔로랭크"
 			} else if (res[i]["info"][j]['queueId'] == 440) {
 				queue = "자유랭크"
-			} else if (res[i]["info"][j]['queueId'] == 1900) {
-				queue = "우르프"
 			}
 			// 게임모드
 			if (data['gameName'] == res[i]["info"][j]['riotIdGameName'] || data['gameName'] == res[i]["info"][j]['summonerName']) {
@@ -93,22 +86,11 @@ function showGameTamble(res, data) {
 			}
 			// 승패
 			if (data['gameName'] == res[i]["info"][j]['riotIdGameName'] || data['gameName'] == res[i]["info"][j]['summonerName']) {
-
-
 				champimg = res[i]["info"][j]['championName']
 				kills = res[i]["info"][j]['kills']
 				deaths = res[i]["info"][j]['deaths']
 				assists = res[i]["info"][j]['assists']
 				kda = res[i]["info"][j]['kda']
-
-				item0 = res[i]["info"][j]['item0']
-				item1 = res[i]["info"][j]['item1']
-				item2 = res[i]["info"][j]['item2']
-				item3 = res[i]["info"][j]['item3']
-				item4 = res[i]["info"][j]['item4']
-				item5 = res[i]["info"][j]['item5']
-				spellD = res[i]["info"][j]['summonerSpellD']
-				spellF = res[i]["info"][j]['summonerSpellF']
 			}
 			// 플레이어 챔피언 사진 and kdad
 			if (data['gameName'] == res[i]["info"][j]['riotIdGameName'] || data['gameName'] == res[i]["info"][j]['summonerName']) {
@@ -169,30 +151,28 @@ function showGameTamble(res, data) {
 		str += queue
 		str += "</div>"
 
-		str += "<div class='win-lose' id='win-lose'>"
+		str += "<div class='win-lose'>"
 		str += win_lose
 		str += "</div>"
 		str += "</div>"
 		str += "<div class='two'>"
-		str += "<div class='champimg'><img width='100' height='100'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/" + champimg + ".png'></div>"
+		str += "<div class='champimg'><img width='100' height='100'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/" + champimg + ".png'></div>"
 		str += "<div class='spellgroup'>"
-		//		https://ddragon.leagueoflegends.com/cdn/14.3.1/img/spell/SummonerSnowball.png
-		str += "<div class='spell1'><img width='25' height='25'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/spell/" + spellD + ".png'></div>"
-		str += "<div class='spell2'><img width='25' height='25'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/spell/" + spellF + ".png'></div>"
+		str += "<div class='spell1'>스펠1</div>"
+		str += "<div class='spell2'>스펠2</div>"
 		str += "</div>"
 		str += "<div class='number'>"
 		str += "<div class='KDA'>" + kills + "/" + deaths + "/" + assists + "</div>"
-		str += "<div class='grade'>평점(" + ((kills + assists) / deaths).toFixed(2) + ":1)</div>"
+		str += "<div class='grade'>평점(" + kda + ":1)</div>"
 		str += "</div>"
 		str += "<div class='itemlist'>"
 		str += "<div class='tool'>"
-
-		str += "<div class='item1'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/" + item0 + ".png'></div>"
-		str += "<div class='item2'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/" + item1 + ".png'></div>"
-		str += "<div class='item3'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/" + item2 + ".png'></div>"
-		str += "<div class='item4'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/" + item3 + ".png'></div>"
-		str += "<div class='item5'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/" + item4 + ".png'></div>"
-		str += "<div class='item6'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/" + item5 + ".png'></div>"
+		str += "<div class='item1'></div>"
+		str += "<div class='item2'></div>"
+		str += "<div class='item3'></div>"
+		str += "<div class='item4'></div>"
+		str += "<div class='item5'></div>"
+		str += "<div class='item6'></div>"
 		str += "</div>"
 		str += "</div>"
 		str += "</div>"
@@ -261,10 +241,9 @@ function showGameTamble(res, data) {
 
 			if (res[i]['info'][j]['teamId'] == 100) {
 				teamchampimg = res[i]["info"][j]['championName']
-				//				teamchampKrName = res[i]["info"][j]['champion_name_kr']
-				riotIdGameName = res[i]["info"][j]['riotIdGameName']
-				teamkills = res[i]["info"][j]['kills']
-				teamdeaths = res[i]["info"][j]['deaths']
+				teamchampKrName = res[i]["info"][j]['champion_name_kr']
+				teamkills = res[i]["info"][j]['kills'] + "/"
+				teamdeaths = res[i]["info"][j]['deaths'] + "/"
 				teamassists = res[i]["info"][j]['assists']
 				teamKDA = res[i]["info"][j]['kda']
 				totalMinionsKilled = res[i]["info"][j]['totalMinionsKilled']
@@ -282,8 +261,8 @@ function showGameTamble(res, data) {
 				bartotalDamageTaken = (((totalDamageTaken / highdamageTaken) * 99)).toFixed(0)
 				//가장 높은 딜량을 기준으로 나눠야할듯
 				str += "<tr>"
-				str += "<td colspan='2' class='cimg'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/" + teamchampimg + ".png'>[" + riotIdGameName + "]</td>"
-				str += "<td class='K/D/A'>" + teamkills + "/" + teamdeaths + "/" + teamassists + "(" + ((teamkills + teamassists) / teamdeaths).toFixed(2) + ")" + "</td>"
+				str += "<td colspan='2' class='cimg'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/" + teamchampimg + ".png'>[" + teamchampKrName + "]</td>"
+				str += "<td class='K/D/A'>" + teamkills + teamdeaths + teamassists + "(" + teamKDA + ")" + "</td>"
 				str += "<td class='damageDealt'>"
 				str += `
 				<div class="RiotGamechart">
@@ -326,10 +305,9 @@ function showGameTamble(res, data) {
 		for (let j = 0; j < res[i]['info'].length; j++) { // 팀 아이디 100
 			if (res[i]['info'][j]['teamId'] == 200) {
 				teamchampimg = res[i]["info"][j]['championName']
-//				teamchampKrName = res[i]["info"][j]['champion_name_kr']
-				riotIdGameName = res[i]["info"][j]['riotIdGameName']
-				teamkills = res[i]["info"][j]['kills']
-				teamdeaths = res[i]["info"][j]['deaths']
+				teamchampKrName = res[i]["info"][j]['champion_name_kr']
+				teamkills = res[i]["info"][j]['kills'] + "/"
+				teamdeaths = res[i]["info"][j]['deaths'] + "/"
 				teamassists = res[i]["info"][j]['assists']
 				teamKDA = res[i]["info"][j]['kda']
 				totalMinionsKilled = res[i]["info"][j]['totalMinionsKilled']
@@ -347,8 +325,8 @@ function showGameTamble(res, data) {
 
 				bartotalDamageTaken = (((totalDamageTaken / highdamageTaken) * 99)).toFixed(0)
 				str += "<tr>"
-				str += "<td colspan='2' class='cimg'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/champion/" + teamchampimg + ".png'>[" + riotIdGameName + "]</td>"
-				str += "<td class='K/D/A'>" + teamkills + "/" + teamdeaths + "/" + teamassists + "(" + ((teamkills + teamassists) / teamdeaths).toFixed(2) + ")" + "</td>"
+				str += "<td colspan='2' class='cimg'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/" + teamchampimg + ".png'>[" + teamchampKrName + "]</td>"
+				str += "<td class='K/D/A'>" + teamkills + teamdeaths + teamassists + "(" + teamKDA + ")" + "</td>"
 				str += "<td class='damageDealt'>"
 				str += `
 				<div class="RiotGamechart">
@@ -389,14 +367,20 @@ function showGameTamble(res, data) {
 	str += "</div>"
 	$('#puuid').append(str)
 	$('#puuid').show();
-//	let como = 1;
+	let como = 1;
 	$("#loadMore").on("click", function() {
-		$('#loadMore').remove()
-		document.getElementById('asd').append(bbb(data))
+//		const asd = document.getElementById('asd');
+//		
 		loadMore.style.top = '30%'
-//	ㅁㄴㅇㅁㄴㅇㅁㄴㅇ
-//		$("#asd").append("<p class='original' style='top:32%; position : absolute;;'>등장" + como + "</p>");
-//		como += 1
+//		const newH1 = document.createElement('h1');
+//		newH1.textContent = 'asd';
+//		for (let i = 0; i < 5; i++) {
+//		asd.appendChild(newH1);
+//
+//
+//		}
+		$("#asd").append("<p class='original' style='top:32%; position : absolute;;'>등장"+como+"</p>");
+		como +=1
 		console.log(res.length)
 
 	})

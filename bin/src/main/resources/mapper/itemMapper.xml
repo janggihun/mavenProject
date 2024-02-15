@@ -1,0 +1,55 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.projectFinal.dao.itemDao">
+
+	<select id="itemBuild">
+		select
+		tier,
+		myChampName,
+		enemyChampName,
+		itemId1,
+		itemId2,
+		itemId3,
+		count(itemId1) as myBuildPickCount,
+		count(if(win =
+		'True', itemId1, null)) as myBuildwinCount
+		from emerald_lol_datas
+		where
+		myChampName = #{myChampName} and enemyChampName = #{enemyChampName}
+		group by itemId1,itemId2,itemId3
+		order by myBuildwinCount desc
+		limit
+		0,3;
+	</select>
+
+	<select id="itemBuildperTier">
+		select
+		tier,
+		myChampName,
+		enemyChampName,
+		itemId1,
+		itemId2,
+		itemId3,
+		count(itemId1) as myBuildPickCount,
+		count(if(win =
+		'True', itemId1, null)) as myBuildwinCount
+		from ${tier}_lol_datas
+		where
+		myChampName = #{myChampName} and enemyChampName = #{enemyChampName}
+		group by itemId1,itemId2,itemId3
+		order by myBuildwinCount desc
+		limit
+		0,3;
+	</select>
+
+	<select id="itemToolTip">
+		select * from itemToolTipT where itemId = ${itemId}
+	</select>
+	
+	<select id="itemInfo">
+		select * from itemInfo_champNameT where tier = #{tier} and itemNum = ${itemNum}
+	</select>
+
+	
+</mapper>

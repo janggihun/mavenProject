@@ -1,0 +1,28 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.projectFinal.dao.JhlChampDao">
+<select id="champRank">
+
+SELECT 
+     cT.champion_name AS champion_name,
+    cT.champion_name_kr,
+    COUNT(rt.win) AS top_win_total_cnt,
+    CONCAT(ROUND((SUM(CASE WHEN rt.win = 1 THEN 1 ELSE 0 END) / COUNT(rt.win)) * 100, 2), '%') AS top_win_rate,
+    (SELECT COUNT(*) FROM rank_test WHERE teamPosition = 'TOP') AS total_champion_pick,
+    CONCAT(ROUND((COUNT(*) / (SELECT COUNT(*) FROM rank_test WHERE teamPosition= #{teamPosition})) * 100, 2), '%') AS top_pick_rate
+FROM 
+    rank_test rt
+JOIN 
+    champListT cT ON rt.championName = cT.champion_name
+WHERE 
+    rt.teamPosition = #{teamPosition}
+GROUP BY 
+    rt.championName, rt.teamPosition, cT.champion_name_kr
+ORDER BY 
+    top_win_total_cnt DESC
+LIMIT 60;
+
+
+</select>
+</mapper>

@@ -1,0 +1,302 @@
+
+
+#myChampion {
+	width: 50%;
+	height: 500px;
+	float: left;
+	position: relative;
+}
+
+#enemyChampion {
+	width: 50%;
+	height: 500px;
+	float: right;
+	position: relative;
+}
+
+#myChampion #myChamp {
+	border-radius: 50%;
+	border: 1px solid black;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+	
+	cursor: url(../../img/unavailable.png) 2 2, auto;
+	
+	z-index: 1;
+}
+
+#enemyChampion #enemyChamp {
+	border-radius: 50%;
+	border: 1px solid black;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	right: 35%;
+	transform: translate(-50%, -50%);
+	
+	cursor: url(../../img/unavailable.png) 2 2, auto;
+}
+
+#versus {
+	position: absolute;
+	top: 40%;
+	left: 46.2%;
+	font-size: 100px;
+}
+
+#champList::-webkit-scrollbar, body::-webkit-scrollbar {
+	width: 8px;
+}
+#champList::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+	height: 3px;
+	background: #785A28;
+	
+	border-radius: 15px;
+}
+#champList::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+	background: rgba(33, 122, 244, .1);
+}
+
+
+#champList {
+	padding: 20px 20px 20px 20px;
+
+	background-color: #091428;
+	color: #C8AA6E;
+	
+	top: 60px;
+	
+	width: 78%;
+	height: 800px;
+	
+	display: none;
+	
+	overflow: scroll;
+	float: left;
+	
+	margin-left: 200px;
+}
+
+/* #itemList { */
+
+/* 	background-color: #091428; */
+/* 	color: #C8AA6E; */
+	
+/* 	width: 78%; */
+/* 	height: 800px; */
+	
+/*  	display: none; */
+	
+/* 	position: relative; */
+	
+/* 	margin-left: 200px; */
+/* } */
+
+li {
+	position: relative;
+	width: 84px;
+	height: 84px;
+	float: left;
+	padding: 1px;
+	margin-left: 10px;
+	margin-bottom: 30px;
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+	height: 500px;
+	padding-inline-start: 10px;
+}
+
+span {
+	display: block;
+	width: 72px;
+	line-height: 14px;
+	font-size: 16px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-top: 2px;
+	height: 16px;
+	text-align: center;
+}
+
+.searchBox #searchChamp {
+	display: none;
+	
+	color: #C8AA6E;
+	margin: 10px 10px 10px 0px;
+	background-color: #091428;
+	padding-left: 30px;
+	outline: none;
+}
+
+.searchBox{
+	width: 650px;
+	height: 60px;
+	
+	cursor: url(../../img/normal.png) 2 2, auto;
+	
+	margin-left: 217px;
+}
+
+.searchBox input[type=text] {
+	width: 300px;
+	height: 40px;
+	font-size: 16px;
+	
+	outline: none;
+	border-radius: 15px;
+	
+	cursor: auto;
+}
+
+#champList img:hover, .searchBox .positionICN:hover {
+	-webkit-transform: scale(1.4);
+	transform: scale(1.4);
+}
+
+
+.champs #anBtn {
+	width: 300px;
+	height: 40px;
+	font-size: 16px;
+	
+	outline: none;
+	border-radius: 15px;
+	
+	cursor: auto;
+	display: none;
+	
+	position: absolute;
+	
+	left: 41%;
+	top: 650px;
+	
+	cursor: url(../../img/unavailable.png) 2 2, auto;
+}
+
+.searchBox .positionICN {
+	display: none;
+	margin: 5px;
+	
+	cursor: url(../../img/unavailable.png) 2 2, auto;
+}
+
+#champs {
+	width: 100%;
+	height: 500px;
+}
+
+.info {
+	width: 100%;
+	height: 1500px;
+	
+	display: none;
+	
+	background-color: white;
+
+}
+
+.info #pickInfo {
+	width: 50%;
+	height: 1300px;
+
+	float: left;
+	text-align: center;
+	
+	background-color: white;
+
+}
+
+.info #winInfo {
+	width: 50%;
+	height: 1300px;
+
+	float: right;
+	text-align: center;
+	
+	background-color: white;
+
+}
+
+.info #rateInfo {
+	width: 100%;
+	height: 50px;
+
+	text-align: center;
+	
+	background-color: white;
+}
+
+.info #rateInfo #myChampInfo {
+	width: 50%;
+	height: 300px;
+
+	float: left;
+	text-align: center;
+	
+	background-color: white;
+}
+
+.info #rateInfo #enemyChampInfo {
+	width: 50%;
+	height: 300px;
+
+	float: right;
+	text-align: center;
+	
+	background-color: white;
+}
+
+
+/* #itemList #champs #item0 img { */
+/* 	border-radius: 50%; */
+/* 	border: 1px solid black; */
+/* 	width: 200px; */
+/* 	height: 200px; */
+/* 	position: absolute; */
+	
+/* 	top: 50px; */
+/* 	left: 43%; */
+	
+/* 	cursor: url(../img/unavailable.png) 2 2, auto; */
+	
+/* 	z-index: 1; */
+/* } */
+
+/* #itemList #champs #item1 img { */
+/* 	border-radius: 50%; */
+/* 	border: 1px solid black; */
+/* 	width: 200px; */
+/* 	height: 200px; */
+/* 	position: absolute; */
+	
+/* 	top: 50%; */
+/* 	left: 27%; */
+	
+/* 	cursor: url(../img/unavailable.png) 2 2, auto; */
+	
+/* 	z-index: 1; */
+/* } */
+
+/* #itemList #champs #item2 img { */
+/* 	border-radius: 50%; */
+/* 	border: 1px solid black; */
+/* 	width: 200px; */
+/* 	height: 200px; */
+/* 	position: absolute; */
+	
+/* 	top: 50%; */
+/* 	left: 58%; */
+	
+/* 	cursor: url(../img/unavailable.png) 2 2, auto; */
+	
+/* 	z-index: 1; */
+/* } */

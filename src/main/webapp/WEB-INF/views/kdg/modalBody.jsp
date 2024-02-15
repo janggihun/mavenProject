@@ -45,6 +45,11 @@
 							name="sup" onclick="line(this.id)">
 
 					</div>
+					<div class="img" id="allimg">
+						<img id="all" class="positionICN" src="../img/all.png"
+							name="all" onclick="line(this.id)">
+
+					</div>
 				</div>
 			<div id="champList" style = "display: none;">
 				<ul>
@@ -59,7 +64,7 @@
 					</c:forEach>
 				</ul>
 			</div>
-			<div id = "selectTier" style = "display: none;">
+			<div id = "selectTier_modal" style = "display: none;">
 				<div class='dropdown'>
 					<button id='TierDropDownModal' class='btn btn-secondary dropdown-toggle modalTier' type='button' data-bs-toggle='dropdown' aria-expanded='false'>티어 선택</button>
 						<ul class='dropdown-menu'>
@@ -99,7 +104,7 @@
 	      	</div>
 		</div>
       <div id = "btnDiv" class="modal-footer">
-        <button id = "clickBtn" class="btn btn-primary" style = "display: none;">선택 완료</button>
+        <button id = "clickBtn" class="btn btn-primary modal_clickBtn">선택 완료</button>
         <button id = "reSelectBtn" class="btn btn-primary" style = "display: none;">다시 선택</button>
       </div>
     </div>

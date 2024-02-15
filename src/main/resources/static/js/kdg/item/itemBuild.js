@@ -1,11 +1,9 @@
 $(document).ready(function() {
 	$('#clickBtn').click(function() {
 
-		$('#lineCheck').empty();
-
 		var myChampName = $('#myChampName').text();
 		var enemyChampName = $('#enemyChampName').text();
-		var tier = $('#tier_en_Modal').text();
+		var tier = 'platinum';
 		
 		$('#champList').hide();
 
@@ -25,8 +23,11 @@ $(document).ready(function() {
 				$('#champList').hide();
 
 				str2 = ""
+				str2 += "<table>"
+				str2 += "<caption class = 'itemBuild_modal_caption'>추천 빌드</caption>"
 
 				for (let i = 0; i < res.length; i++) {
+					str2 += "<tr><td><div class = 'itemBuild_modal_tr'>"
 					str2 += "<img id = '" + res[i].itemId1 + "' class='jb-title-modal' src='https://ddragon.leagueoflegends.com/cdn/14.1.1/img/item/" + res[i].itemId1 + ".png' onmouseover='javascript:itemToolTipModal(this.id)' style='width: 40px; height: 40px;'></img>"
 					str2 += "<div class = 'jb-text-modal'></div>"
 					str2 += "<span class='itemBuild-direction'></span>"
@@ -35,9 +36,14 @@ $(document).ready(function() {
 					str2 += "<span class='itemBuild-direction'></span>"
 					str2 += "<img id = '" + res[i].itemId3 + "' class='jb-title-modal' src='https://ddragon.leagueoflegends.com/cdn/14.1.1/img/item/" + res[i].itemId3 + ".png' onmouseover='javascript:itemToolTipModal(this.id)' style='width: 40px; height: 40px;'></img>"
 					str2 += "<div class = 'jb-text-modal'></div>"
-					str2 += (res[i].myBuildwinCount / res[i].myBuildPickCount * 100).toFixed(2) + "%<br>"
+					str2 += "</div></td><td class = 'itemBuild_modal_pickCnt'>"
+					str2 += res[i].myBuildPickCount+" 게임</td><td class = 'itemBuild_modal_winRate'>"
+					str2 += (res[i].myBuildwinCount / res[i].myBuildPickCount * 100).toFixed(2) + "%</td></tr>"
 				}
-				$('#selectTier').show()
+				
+				str2 += "</table>"
+				
+				$('#selectTier_modal').show()
 				$('#itemBuild').show();
 				$('#itemBuild').html(str2);
 				
@@ -58,10 +64,11 @@ $(document).ready(function() {
 	$('#reSelectBtn').click(function() {
 		
 		$('#reSelectBtn').hide()
-		$('#clickBtn').show()
+		$('#clickBtn').hide()
 		$('#itemBuild').hide()
 		$('#itemBuild').empty()
-		$('#selectTier').hide()
+		$('#selectTier_modal').hide()
+		$('#champList').hide()
 		
 		str = "챔피언을 선택해보세요."
 		$('#exampleModalToggleLabel').html(str);
@@ -120,7 +127,11 @@ function choiceTierModal(a){
 			success: function(res) {
 
 				str2 = ""
+				str2 += "<table>"
+				str2 += "<caption class = 'itemBuild_modal_caption'>추천 빌드</caption>"
+
 				for (let i = 0; i < res.length; i++) {
+					str2 += "<tr><td><div class = 'itemBuild_modal_tr'>"
 					str2 += "<img id = '" + res[i].itemId1 + "' class='jb-title-modal' src='https://ddragon.leagueoflegends.com/cdn/14.1.1/img/item/" + res[i].itemId1 + ".png' onmouseover='javascript:itemToolTipModal(this.id)' style='width: 40px; height: 40px;'></img>"
 					str2 += "<div class = 'jb-text-modal'></div>"
 					str2 += "<span class='itemBuild-direction'></span>"
@@ -129,8 +140,13 @@ function choiceTierModal(a){
 					str2 += "<span class='itemBuild-direction'></span>"
 					str2 += "<img id = '" + res[i].itemId3 + "' class='jb-title-modal' src='https://ddragon.leagueoflegends.com/cdn/14.1.1/img/item/" + res[i].itemId3 + ".png' onmouseover='javascript:itemToolTipModal(this.id)' style='width: 40px; height: 40px;'></img>"
 					str2 += "<div class = 'jb-text-modal'></div>"
-					str2 += (res[i].myBuildwinCount / res[i].myBuildPickCount * 100).toFixed(2) + "%<br>"
+					str2 += "</div></td><td class = 'itemBuild_modal_pickCnt'>"
+					str2 += res[i].myBuildPickCount+" 게임</td><td class = 'itemBuild_modal_winRate'>"
+					str2 += (res[i].myBuildwinCount / res[i].myBuildPickCount * 100).toFixed(2) + "%</td></tr>"
 				}
+				
+				str2 += "</table>"
+				
 				$('#itemBuild').html(str2);
 					
 				str4 = "빌드를 확인해보세요."
@@ -143,12 +159,13 @@ function choiceTierModal(a){
 	}
 
 function test(){
-	
+		
+		$('#clickBtn').hide()
 		$('#reSelectBtn').hide()
-		$('#clickBtn').show()
 		$('#itemBuild').hide()
 		$('#itemBuild').empty()
-		$('#selectTier').hide()
+		$('#selectTier_modal').hide()
+		$('#champList').hide()
 		
 		str = "챔피언을 선택해보세요."
 		$('#exampleModalToggleLabel').html(str);

@@ -1,0 +1,124 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.projectFinal.dao.MemberDao">
+
+
+	<select id="main">
+
+		select * from memberT where userId = #{userId}
+
+	</select>
+
+	<select id="login">
+
+		select *
+		from memberT
+		where userId = #{userId}
+
+	</select>
+	<update id="loginNow">
+
+		update memberT
+		set loginNow = 1
+		where userId =
+		#{userId} ;
+
+	</update>
+	<update id="logoutNow">
+
+		update memberT
+		set loginNow = 0
+		where userId =
+		#{userId} ;
+
+	</update>
+	<insert id="join">
+
+		insert into memberT(userId , userPw,role,userEmail)
+		values(#{userId}
+		, #{userPw},#{role},#{userEmail})
+	</insert>
+
+	<select id="find">
+
+		select count(*)
+		from memberT
+		where userId = #{userId}
+
+	</select>
+
+	<select id="info">
+
+		select * from memberT
+
+	</select>
+
+	<insert id="payDbSave">
+
+		insert into paymentT(userId, userCash,userPoint)
+		values(#{userId}, #{userCash},#{userPoint})
+
+	</insert>
+	<update id="updatePoint">
+
+		update memberT
+		set userPoint =
+		(select userPoint from
+		memberT where userId = #{userId})+#{userPoint}
+		where
+		userId = #{userId}
+
+	</update>
+
+	<select id="ajaxtest">
+
+		select count(*)
+		from memberT
+		where userId = #{userId}
+
+	</select>
+
+	<select id="joinIdCheck">
+		select userId from memberT where userId=#{userId};
+	</select>
+
+	<select id="checkAdmin">
+		select adminLevel from memberT where
+		userId=#{userId};
+	</select>
+	<select id="memberTable">
+		select * from memberT;
+	</select>
+
+
+	<select id="addRoulette">
+
+		update memberT
+		set rouletteCount = (select rouletteCount from memberT where userId = #{userId})+1
+		where userId = #{userId};
+
+		select * from memberT where userId = #{userId};
+	</select>
+	<select id="rouletteInfo">
+		select * from memberT where userId = #{userId};
+	</select>
+	<select id="minusRoulette">
+
+		update memberT
+		set rouletteCount = (select rouletteCount from memberT where userId = #{userId})-1
+		where userId = #{userId};
+
+		select * from memberT where userId = #{userId};
+	</select>
+
+	<select id="findId">
+		select * from memberT where userEmail = #{userEmail};
+	</select>
+
+	
+
+	
+
+	
+</mapper>

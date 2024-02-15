@@ -1,0 +1,26 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.projectFinal.dao.ChampionDao">
+
+	<select id="champList">
+		select * from champListT;
+	</select>
+	
+	<select id="searchChamp">
+		select champion_name_kr,champion_name 
+		from champListT
+		where champion_name_kr like concat('%',#{searchChamp},'%') or champion_name like concat('%',#{searchChamp},'%') or champion_name_cons like concat('%',#{searchChamp},'%');
+	</select>
+	
+	<select id="champLine">
+		select champion_name_kr,champion_name
+		from champListT
+		where line like concat('%',#{line},'%');
+	</select>
+	
+	<select id="reChampList">
+		select champion_name,champion_name_kr from champListT;
+	</select>
+	
+</mapper>

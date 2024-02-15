@@ -11,8 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemberDto {
-	
-	private String userName;
+
 	private String userId;
 	private String userPw;
 	private String userEmail;

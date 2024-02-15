@@ -18,4 +18,6 @@ public interface ChampionDao {
 	
 	public List<HashMap<String, String>> reChampList();
 
+	public List<HashMap<String, String>> allChampLine(ChampionImageDto cDto);
+
 }

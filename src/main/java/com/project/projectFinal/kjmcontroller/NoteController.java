@@ -25,7 +25,7 @@ public class NoteController {
 	@GetMapping("/Note")
 	public String Noteinfo(Model model, HttpSession session, NoteDto noteDto) {
 		String userId = (String) session.getAttribute("userId");
-		noteDto.setSend_userId(userId);
+		noteDto.setUserId(userId);
 		ArrayList<NoteDto> maillist= noteService.NoteInfo(noteDto);
 		model.addAttribute("maillist", maillist);
 		return "kjm/Note";	

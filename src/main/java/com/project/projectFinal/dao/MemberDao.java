@@ -41,13 +41,7 @@ public interface MemberDao {
 
 	MemberDto minusRoulette(MemberDto memberDto);
 
-	MemberDto findId(MemberDto memberDto);
-
-	boolean findPw(MemberDto memberDto);
-
-	int changePw(MemberDto memberDto);
-
-	
+	boolean findId(MemberDto memberDto);
 
 
 }

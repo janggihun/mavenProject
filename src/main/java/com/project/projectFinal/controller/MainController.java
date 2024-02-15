@@ -21,21 +21,14 @@ public class MainController {
 	MemberService memberService;
 
 	@GetMapping("/")
-	public String index(Model model) {
-		String searchbox = "메롱";
-		model.addAttribute("searchbox", searchbox);
-//		Object principal = SecurityContextHolder.getContext().getAuthentication();
-//		
-//		log.info("==={}",principal);
+	public String index() {
 
 		return "newMain";
-
 	}
 
 	@GetMapping("/new")
-	public String mainNew(Model model) {
-		String searchbox = "메롱";
-		model.addAttribute("searchbox", searchbox);
+	public String mainNew() {
+
 		return "newMain";
 	}
 
@@ -74,10 +67,7 @@ public class MainController {
 		return "stm/stmmain";
 	}
 
-	@GetMapping("/testboard")
-	public String testboard() {
-	
-		return "stm/recordBoard";
-	}
 
+
+	
 }

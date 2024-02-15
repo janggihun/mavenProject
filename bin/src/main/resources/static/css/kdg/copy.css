@@ -1,0 +1,515 @@
+* {
+    cursor: url(../../img/normal.png) 2 2, auto;
+}
+
+#container {
+	width: 1300px;
+	height: 2000px;
+	margin: 0auto;
+	border: 1px solid black;
+	
+	background-color: #3C3C41;
+}
+
+#header {
+	width: 1100px;
+	height: 300px;
+	margin: 0auto;
+	border: 1px solid black;
+}
+
+#champbox {
+	width: 47%;
+	height: 250px;
+	float: left;
+	margin: 10px;
+	border: 1px solid black;
+}
+
+.champimg1 {
+	width: 33%;
+	height: 130px;
+	float: left;
+	margin: 20px;
+	border: 1px solid black;
+	border-radius: 50%;
+}
+
+#vs {
+	width: 13%;
+	height: 60px;
+	float: left;
+	margin-top: 80px;
+	
+}
+
+.champimg2 {
+	width: 33%;
+	height: 130px;
+	float: left;
+	margin: 20px;
+	border: 1px solid black;
+	border-radius: 50%;
+}
+
+#champname1 {
+	width: 40%;
+	height: 30px;
+	float: left;
+	margin: 10px;
+	
+	text-align: center;
+}
+
+#gongback {
+	width: 10%;
+	height: 50px;
+	float: left;
+	margin: 0 auto;
+}
+
+#champname2 {
+	width: 40%;
+	height: 30px;
+	float: left;
+	margin: 10px;
+	
+	text-align: center;
+}
+
+#box {
+	width: 47%;
+	height: 250px;
+	float: left;
+	margin: 10px;
+	border: 1px solid black;
+}
+
+#ex1 {
+	width: 96%;
+	height: 45%;
+	margin: 10px;
+	border: 1px solid black;
+	
+	background-color: #FFFFFF;
+}
+
+#searchbox {
+	width: 96%;
+	height: 45%;
+	margin: 10px;
+	border: 1px solid red;
+}
+
+#search {
+	width: 45%;
+	height: 90px;
+	margin: 10px; float : left;
+	border: 1px solid black;
+	float: left;
+}
+
+#searchChamp {
+	margin-top : 50px;
+	margin-left : 15px;
+}
+
+#line {
+	width: 45%;
+	height: 50px;
+	float: left;
+	
+	display: none;
+}
+
+#topimg {
+	width: 19%;
+	height: 45px;
+	margin: 1px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+
+#jugimg {
+	width: 19%;
+	height: 45px;
+	margin: 1px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+
+#midimg {
+	width: 19%;
+	height: 45px;
+	margin: 1px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+
+#adcimg {
+	width: 19%;
+	height: 45px;
+	margin: 1px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+
+#supimg {
+	width: 19%;
+	height: 45px;
+	margin: 1px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+
+#champListbox {
+	width: 466px;
+	height: 300px;
+}
+
+#champList::-webkit-scrollbar, body::-webkit-scrollbar {
+	width: 8px;
+}
+
+#champList::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+	height: 3px;
+	background: #785A28;
+	border-radius: 15px;
+}
+
+#champList::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+	background: rgba(33, 122, 244, .1);
+}
+
+#champList {
+	padding: 20px 20px 20px 20px;
+	background-color: #091428;
+	color: #C8AA6E;
+	top: 60px;
+	width: 466px;
+	height: 466px;
+	overflow: scroll;
+	float: left;
+	margin: 0auto;
+	
+	display: none;
+}
+
+#itemBuild {
+	padding: 20px 20px 20px 20px;
+	background-color: #091428;
+	color: #C8AA6E;
+	top: 60px;
+	width: 466px;
+	height: 200px;
+	float: left;
+	margin: 0auto;
+	
+	display: none;
+}
+
+#champListbox #champList .itemBuild {
+	
+	text-align: center;
+	background-color: #091428;
+/* 	color: #C8AA6E; */
+	
+	padding: 0;	
+	
+	width: 1008px;
+	height: 628px;
+}
+
+#champListLi {
+	position: relative;
+	width: 44px;
+	height: 44px;
+	float: left;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+#champListUl {
+	list-style: none;
+	height: 500px;
+	
+	padding: 0;
+}
+
+span {
+	display: block;
+	width: 44px;
+	line-height: 16px;
+	font-size: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-top: 2px;
+	height: 16px;
+	text-align: center;
+}
+
+.champimg1 img, .champimg2 img {
+	
+	width: 151.766px;
+	height: 130px;
+	
+	border-radius: 50%;
+	
+}
+
+#vs img {
+	
+	width: 100%;
+	height: 60px;
+	
+}
+
+.mid-header #anBtn {
+	width: 300px;
+	height: 40px;
+	font-size: 16px;
+	
+	outline: none;
+	border-radius: 15px;
+	
+	cursor: auto;
+	display: none;
+	
+	position: absolute;
+	
+	left: 42%;
+	top: 733px;
+	
+	cursor: url(../../img/unavailable.png) 2 2, auto;
+}
+.mid-header .tier {
+	width: auto;
+	height: 35px;
+	float : left;
+	font-size: 15px;
+	margin-left: 7px;
+	top: 35px;
+	
+	position: relative;
+	border-radius: 15px;
+	
+	display: none;
+	
+	cursor: url(../../img/unavailable.png) 2 2, auto;
+}
+
+
+#champList img:hover, #line .img .positionICN:hover {
+	-webkit-transform: scale(1.4);
+	transform: scale(1.4);
+}
+
+.jb-text {
+	
+	padding: 15px 20px;
+	background-color: #444444;
+	border-radius: 5px;
+	color: #ffffff;
+	position: absolute;
+	display: none;
+	
+	width: 400px;
+}
+
+.jb-title:hover + .jb-text {	
+	 
+	display: block;
+	
+}
+
+.secondChamp #myChamp, .thirdChamp #myChamp, .firstChamp #myChamp {
+	
+	width: 158px;
+	height: 158px;
+	border-radius: 50%;
+	
+}
+
+.goldcrown{
+	
+	top: 8%;
+	left: 47.5%;
+	
+	width: 100px;
+	height: 100px;
+	
+	position: absolute;
+	
+}
+.silvercrown{
+	
+	top: 10%;	
+	left: 28.2%;
+	
+	width: 100px;
+	height: 100px;	
+	
+	position: absolute;
+	
+}
+.bronzecrown{
+	
+	top: 10%;	
+	left: 66.5%;
+	
+	width: 100px;
+	height: 100px;	
+	
+	position: absolute;
+	
+}
+
+.sliding-box .firstChampBox, .sliding-box .secondChampBox, .sliding-box .thirdChampBox {
+	
+	width: 33.3%;
+	height: 300px;
+	float: left;
+	
+}
+
+.sliding-box {
+	
+	width: 1100px;
+	height: 300px;
+	
+}
+
+.sliding-box .firstChampBox .firstChamp {
+	
+	width: 160px;
+	height: 160px;
+	float: left;
+	margin: 20px;
+	border-radius: 50%;
+	margin-left: 106px;
+	
+}
+.sliding-box .secondChampBox .secondChamp,
+.sliding-box .thirdChampBox .thirdChamp {
+	
+	width: 160px;
+	height: 160px;
+	float: left;
+	margin: 20px;
+	border-radius: 50%;
+	margin-left: 106px;
+	margin-top: 30px;
+	
+}
+
+.sliding-box .firstChampBox .firstChamp #firstChampName,
+.sliding-box .secondChampBox .secondChamp #secondChampName,
+.sliding-box .thirdChampBox .thirdChamp #thirdChampName {
+	
+	width: 100%;
+	height: 60px;
+	font-size: 27px;
+	color: white;;
+	text-align: center;
+	padding: 10px;
+}
+.coreItemList_caption {
+	caption-side: top;
+	text-align: right;
+}
+
+.coreItemList {
+	border: 1px solid black;
+	text-align: center;
+	color: black;
+	width: 1050px;
+	left: 25px;
+}
+
+.small_chtd, .small_chtd img {
+	width: 30px;
+	height: 30px;
+}
+
+.small_ltd, .small_ltd img {
+	width: 30px;
+	height: 30px;
+}
+
+.small_td {
+	width: 35px;
+	height: 30px;
+}
+
+.none_td {
+	width: 50px;
+}
+
+.long_rowtd {
+	width: 240px;
+}
+
+.itemName_td {
+	text-align: left;
+	width: 140px;
+	font-size: 13px;
+}
+
+.itemImg_td {
+	width: 100px;
+}
+
+.itemImg_td img {
+	width: 40px;
+	height: 40px;
+}
+
+.coreItemList_caption .caption_img {
+	width: 30px;
+	height: 30px;
+}
+
+.small_tiertd {
+	width: 50px;
+	height: 30px;
+}
+
+.td_txt {
+	font-size: 12px;
+}
+
+.long_rowtd2 {
+	width: 180px;
+}
+
+.analysis_btn {
+	width: 273px;
+	border-radius: 5%;
+}
+
+.jb-text {
+	
+	padding: 15px 20px;
+	background-color: #444444;
+	border-radius: 5px;
+	color: #ffffff;
+	position: absolute;
+	display: none;
+	
+	width: 400px;
+	
+	text-align: left;
+	
+}
+
+.jb-title:hover + .jb-text {	
+	 
+	display: block;
+	
+}

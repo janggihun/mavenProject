@@ -1,5 +1,5 @@
 * {
-	cursor: url(../../img/normal.png) 2 2, auto;
+    cursor: url(../../img/normal.png) 2 2, auto;
 }
 
 #container {
@@ -7,6 +7,7 @@
 	height: 2000px;
 	margin: 0auto;
 	border: 1px solid black;
+	
 	background-color: #3C3C41;
 }
 
@@ -39,6 +40,7 @@
 	height: 60px;
 	float: left;
 	margin-top: 80px;
+	
 }
 
 .champimg2 {
@@ -55,6 +57,7 @@
 	height: 30px;
 	float: left;
 	margin: 10px;
+	
 	text-align: center;
 }
 
@@ -70,6 +73,7 @@
 	height: 30px;
 	float: left;
 	margin: 10px;
+	
 	text-align: center;
 }
 
@@ -86,6 +90,7 @@
 	height: 45%;
 	margin: 10px;
 	border: 1px solid black;
+	
 	background-color: #FFFFFF;
 }
 
@@ -97,29 +102,29 @@
 }
 
 #search {
-/* 	width: 45%; */
-/* 	height: 90px; */
-/* 	margin: 10px; */
-	float: left;
+	width: 45%;
+	height: 90px;
+	margin: 10px; float : left;
 	border: 1px solid black;
 	float: left;
 }
 
 #searchChamp {
-	margin-top: 50px;
-	margin-left: 15px;
+	margin-top : 50px;
+	margin-left : 15px;
 }
 
 #line {
 	width: 45%;
-	height: 50px;
+	height: 45px;
 	float: left;
+	
 	display: none;
 }
 
 #topimg {
-	width: 19%;
-	height: 45px;
+	width: 15%;
+	height: 40px;
 	margin: 1px;
 	float: left;
 	line-height: 40px;
@@ -127,8 +132,8 @@
 }
 
 #jugimg {
-	width: 19%;
-	height: 45px;
+	width: 15%;
+	height: 40px;
 	margin: 1px;
 	float: left;
 	line-height: 40px;
@@ -136,8 +141,8 @@
 }
 
 #midimg {
-	width: 19%;
-	height: 45px;
+	width: 15%;
+	height: 40px;
 	margin: 1px;
 	float: left;
 	line-height: 40px;
@@ -145,8 +150,8 @@
 }
 
 #adcimg {
-	width: 19%;
-	height: 45px;
+	width: 15%;
+	height: 40px;
 	margin: 1px;
 	float: left;
 	line-height: 40px;
@@ -154,8 +159,17 @@
 }
 
 #supimg {
-	width: 19%;
-	height: 45px;
+	width: 15%;
+	height: 40px;
+	margin: 1px;
+	float: left;
+	line-height: 40px;
+	text-align: center;
+}
+
+#allimg {
+	width: 15%;
+	height: 40px;
 	margin: 1px;
 	float: left;
 	line-height: 40px;
@@ -187,15 +201,16 @@
 	color: #C8AA6E;
 	top: 60px;
 	width: 466px;
-	height: 466px;
+	height: 300px;
 	overflow: scroll;
 	float: left;
 	margin: 0auto;
+	
 	display: none;
 }
 
 #itemBuild {
-	padding: 20px 20px 20px 20px;
+	padding: 5px 20px 20px 20px;
 	background-color: #091428;
 	color: #C8AA6E;
 	top: 60px;
@@ -203,14 +218,18 @@
 	height: 200px;
 	float: left;
 	margin: 0auto;
+	
 	display: none;
 }
 
 #champListbox #champList .itemBuild {
+	
 	text-align: center;
 	background-color: #091428;
-	/* 	color: #C8AA6E; */
-	padding: 0;
+/* 	color: #C8AA6E; */
+	
+	padding: 0;	
+	
 	width: 1008px;
 	height: 628px;
 }
@@ -220,13 +239,17 @@
 	width: 44px;
 	height: 44px;
 	float: left;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	cursor: pointer;
+	
+	margin-left: 1px;
+	margin-right: 7px;
 }
 
 #champListUl {
 	list-style: none;
 	height: 500px;
+	
 	padding: 0;
 }
 
@@ -244,42 +267,55 @@ span {
 }
 
 .champimg1 img, .champimg2 img {
+	
 	width: 151.766px;
 	height: 130px;
+	
 	border-radius: 50%;
+	
 }
 
 #vs img {
+	
 	width: 100%;
 	height: 60px;
+	
 }
 
 .mid-header #anBtn {
 	width: 300px;
 	height: 40px;
 	font-size: 16px;
+	
 	outline: none;
 	border-radius: 15px;
+	
 	cursor: auto;
 	display: none;
+	
 	position: absolute;
+	
 	left: 42%;
 	top: 733px;
+	
 	cursor: url(../../img/unavailable.png) 2 2, auto;
 }
-
 .mid-header .tier {
 	width: auto;
 	height: 35px;
-	float: left;
+	float : left;
 	font-size: 15px;
 	margin-left: 7px;
 	top: 35px;
+	
 	position: relative;
 	border-radius: 15px;
+	
 	display: none;
+	
 	cursor: url(../../img/unavailable.png) 2 2, auto;
 }
+
 
 #champList img:hover, #line .img .positionICN:hover {
 	-webkit-transform: scale(1.4);
@@ -287,72 +323,93 @@ span {
 }
 
 .jb-text {
+	
 	padding: 15px 20px;
 	background-color: #444444;
 	border-radius: 5px;
 	color: #ffffff;
 	position: absolute;
 	display: none;
+	
 	width: 400px;
 }
 
-.jb-title:hover+.jb-text {
+.jb-title:hover + .jb-text {	
+	 
 	display: block;
+	
 }
 
 .secondChamp #myChamp, .thirdChamp #myChamp, .firstChamp #myChamp {
+	
 	width: 158px;
 	height: 158px;
 	border-radius: 50%;
+	
 }
 
-.goldcrown {
+.goldcrown{
+	
 	top: 8%;
 	left: 47.5%;
+	
 	width: 100px;
 	height: 100px;
+	
 	position: absolute;
+	
 }
-
-.silvercrown {
-	top: 10%;
+.silvercrown{
+	
+	top: 10%;	
 	left: 28.2%;
+	
 	width: 100px;
-	height: 100px;
+	height: 100px;	
+	
 	position: absolute;
+	
 }
-
-.bronzecrown {
-	top: 10%;
+.bronzecrown{
+	
+	top: 10%;	
 	left: 66.5%;
+	
 	width: 100px;
-	height: 100px;
+	height: 100px;	
+	
 	position: absolute;
+	
 }
 
-.sliding-box .firstChampBox, .sliding-box .secondChampBox, .sliding-box .thirdChampBox
-	{
+.sliding-box .firstChampBox, .sliding-box .secondChampBox, .sliding-box .thirdChampBox {
+	
 	width: 33.3%;
 	height: 300px;
 	float: left;
+	
 }
 
 .sliding-box {
+	
 	width: 1100px;
 	height: 300px;
+	
 }
 
 .sliding-box .firstChampBox .firstChamp {
+	
 	width: 160px;
 	height: 160px;
 	float: left;
 	margin: 20px;
 	border-radius: 50%;
 	margin-left: 106px;
+	
 }
-
-.sliding-box .secondChampBox .secondChamp, .sliding-box .thirdChampBox .thirdChamp
-	{
+.sliding-box .secondChampBox .secondChamp,
+.sliding-box .thirdChampBox .thirdChamp {
+	
 	width: 160px;
 	height: 160px;
 	float: left;
@@ -360,10 +417,13 @@ span {
 	border-radius: 50%;
 	margin-left: 106px;
 	margin-top: 30px;
+	
 }
 
-.sliding-box .firstChampBox .firstChamp #firstChampName, .sliding-box .secondChampBox .secondChamp #secondChampName,
-	.sliding-box .thirdChampBox .thirdChamp #thirdChampName {
+.sliding-box .firstChampBox .firstChamp #firstChampName,
+.sliding-box .secondChampBox .secondChamp #secondChampName,
+.sliding-box .thirdChampBox .thirdChamp #thirdChampName {
+	
 	width: 100%;
 	height: 60px;
 	font-size: 27px;
@@ -371,18 +431,47 @@ span {
 	text-align: center;
 	padding: 10px;
 }
-
 .coreItemList_caption {
 	caption-side: top;
 	text-align: right;
 }
 
-.coreItemList_box {
+.itemBuild_modal_caption {
+	
+	caption-side: top;
+	text-align: left;
+	color: #785A28;
+	font-weight: bold;
+	
+}
+
+.modal_clickBtn{
+	
+	display: none;
+	
+}
+
+.itemBuild_modal_pickCnt, .itemBuild_modal_winRate {
+	
+	text-align: right;
+	width: 124px;
+	
+}
+
+.itemBuild_modal_winRate{
+	
+	font-weight: bold;
+	font-size: 16px;
+	
+}
+
+.coreItemList_box{
+	
 	margin-left: 20%;
+	
 }
 
 .coreItemList {
-	border: 1px solid black;
 	text-align: center;
 	color: black;
 	width: 1100px;
@@ -445,74 +534,121 @@ span {
 	width: 180px;
 }
 
+.tableMainTr {
+	
+	background-color: #343a40;
+	color: white;
+	
+}
+
+.resultTr0{
+	
+	background-color: #27282d;
+	color: #999;
+	
+}
+
+.resultTr1{
+	
+	background-color: #2a2c33;
+	color: #999;
+	
+}
+
+.highest_rate{
+	
+	color: rgb( 248, 173, 83);
+	
+}
+
 .analysis_btn {
 	width: 100px;
 	border-radius: 5%;
 }
 
 .jb-text {
+	
 	padding: 15px 20px;
 	background-color: #444444;
 	border-radius: 5px;
 	color: #ffffff;
 	position: absolute;
 	display: none;
+	
 	width: 400px;
+	
 	text-align: left;
+	
 }
 
-.jb-title:hover+.jb-text {
+.jb-title:hover + .jb-text {	
+	 
 	display: block;
+	
 }
 
 .dropdown {
+	
 	width: 310px;
+	
 }
 
 .sideBanner {
-	position: absolute;
-	margin-left: 1%;
-	width: 350px;
-	height: 350px;
-	top: 50px;
-	color: #ffffff;
+  position: absolute;
+  margin-left: 1.5%;
+  width: 319px;
+  height: 656px;
+  top: 50px;
+  color: #ffffff;
+  border: 1px solid black;
+  background-color: white;
 }
 
 .txt-label {
-	width: 350px;
+	
+	width: 317px;
 	height: 40px;
+	
 }
 
 .bannerImg {
-	width: 350px;
-	height: 310px;
+	
+  width: 317px;
+  height: 615px;
+	
 }
 
 .itemBuild-direction {
-	display: inline-block;
-	width: 24px;
-	height: 24px;
-	line-height: 24px;
-	background-image:
-		url(https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg);
-	background-size: 100%;
-	background-repeat: no-repeat;
-	text-align: center;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    background-image: url(https://s-lol-web.op.gg/images/icon/icon-arrow-right.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
 }
 
 .jb-text-modal {
+	
 	padding: 15px 20px;
 	background-color: #444444;
 	border-radius: 5px;
 	color: #ffffff;
 	position: absolute;
 	display: none;
+	
 	width: 400px;
+	
 	text-align: left;
+	
 	left: 550px;
 	bottom: 27px;
+	
 }
 
-.jb-title-modal:hover+.jb-text-modal {
+.jb-title-modal:hover + .jb-text-modal {	
+	 
 	display: block;
+	
 }

@@ -1,0 +1,19 @@
+.slider {
+	width: 240px; /* 슬라이더의 너비 */
+	height: 300px; /* 슬라이더의 높이 */
+	overflow: hidden; /* 이미지가 박스 바깥으로 나가지 않도록 함 */
+	position: relative; /* 슬라이드 위치 조정을 위함 */
+}
+
+.slides {
+	width: 100%; /* 부모 요소와 동일한 너비 */
+	height: 100%; /* 부모 요소와 동일한 높이 */
+	display: flex; /* 이미지를 가로로 나열 */
+	transition: transform 0.5s ease-in-out; /* 부드러운 전환 효과 */
+}
+
+.slides img {
+	width: 100%; /* 슬라이더 너비에 맞게 조정 */
+	height: 300px; /* 슬라이더 높이에 맞게 조정 */
+	object-fit: cover; /* 이미지가 박스에 꽉 차도록 조정하되, 비율 유지 */
+}

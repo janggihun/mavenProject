@@ -3,7 +3,7 @@ var floatPosition = parseInt($(".sideBanner").css('top'))
 $(window).scroll(function() {
 
     var currentTop = $(window).scrollTop();
-    var bannerTop = currentTop + floatPosition + 200 + "px";
+    var bannerTop = currentTop + floatPosition + 115 + "px";
 
     $(".sideBanner").stop().animate({
       "top" : bannerTop

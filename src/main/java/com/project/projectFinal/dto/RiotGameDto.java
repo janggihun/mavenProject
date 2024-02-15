@@ -24,6 +24,7 @@ public class RiotGameDto {
 	private String gameEndTimestamp; // 게임 끝난 시간
 	private String gameStartTimestamp;// 게임 시작 시간
 	private String lane; // 라인
+//	private List<Integer> legendaryItemUsed; // 사용 리스트 아이템
 	private int queueId; // 게임 모드
 	private boolean win; // 승패
 	private int dragon; // 드래곤
@@ -38,14 +39,4 @@ public class RiotGameDto {
 	private String summonerName;
 	private String champion_name_kr;
 	private int participantId;
-	private int item0; 
-	private int item1; 
-	private int item2; 
-	private int item3; 
-	private int item4; 
-	private int item5; 
-	private int summoner1Id;
-	private int summoner2Id;
-	private int summonerLevel;
-	private int profileIcon;
 }

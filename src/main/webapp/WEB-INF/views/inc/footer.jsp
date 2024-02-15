@@ -9,7 +9,7 @@
 			
 			<a href = "/riotTv/main">test라문철 페이지가기</a>
 			
-			<a href = "/testboard">송태민 새로운 보드</a>
+			
 		</footer>
 		
 		

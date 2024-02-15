@@ -30,14 +30,19 @@ public class ChampionService {
 
 
 	public List<HashMap<String, String>> champLine(ChampionImageDto cDto) {
-		
-		return cd.champLine(cDto);
+
+		if(cDto.getLine().equals("all")) {
+			return cd.allChampLine(cDto);
+		} else{
+			return cd.champLine(cDto);
+		}
 		
 	}
 
 
 	public List<HashMap<String, String>> reChampList() {
 		
+		System.out.println("리챔리~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		return cd.reChampList();
 		
 	}

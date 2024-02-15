@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.projectFinal.dao.ShopDao">
+
+
+
+	<select id="firstPointInfo">
+
+		select * from memberT where userId = "aaa"
+
+	</select>
+
+	<update id="plusPoint100">
+
+		update memberT
+		SET userPoint = 
+		(select userPoint from memberT where userId = #{userId}) + 100
+		where userId = #{userId}
+	</update>
+	<select id="findByID">
+
+		select * from memberT where userId = #{userId}
+
+	</select>
+
+	<update id="plusPoint">
+
+		update memberT 
+		set userPoint =(select userPoint from memberT where userId = #{friendId}) + #{friendPoint}
+		where userId = #{friendId}
+
+	</update>
+	<update id="minusPoint">
+
+		update memberT 
+		set userPoint =(select userPoint from memberT where userId = #{userId}) - #{friendPoint}
+		where userId = #{userId}
+	</update>
+
+
+	<select id="sendPoint1">
+
+		select count(*) from memberT where userId = #{userId}
+
+	</select>
+	<select id="sendPoint2">
+
+		select count(*) from memberT where userId = #{friendId}
+
+	</select>
+
+</mapper>

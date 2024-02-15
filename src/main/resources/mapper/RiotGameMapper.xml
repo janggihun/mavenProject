@@ -4,9 +4,7 @@
 	<insert id="RiotGameInfo">
 		insert IGNORE into RiotGameInfoT values
 		(#{matchId},#{championName},default,#{riotIdGameName},
-		#{riotIdTagline},#{summonerName},#{summonerLevel},#{profileIcon},#{participantId},#{queueId},#{teamId},
-		#{item0},#{item1},#{item2},#{item3},#{item4},#{item5},#{summoner1Id},#{summoner2Id},
-		default,default,#{lane},#{kills},
+		#{riotIdTagline},#{summonerName},#{participantId},#{queueId},#{teamId},#{lane},#{kills},
 		#{assists},#{deaths},#{kda},#{firstBloodKill},#{gameEndTimestamp},
 		#{gameStartTimestamp},#{totalAllyJungleMinionsKilled},#{totalDamageDealtToChampions},
 		#{totalDamageTaken},#{totalEnemyJungleMinionsKilled},#{totalMinionsKilled},
@@ -14,22 +12,10 @@
 
 
 		update RiotGameInfoT R
-		join
-		champName2 C
+		join champListT C
 		on R.championName = C.champion_name
-		set R.champion_name_kr
-		= C.champion_name_kr
+		set R.champion_name_kr = C.champion_name_kr
 		where R.matchId = #{matchId};
-
-		update RiotGameInfoT R
-		join RiotGameSpellT S
-		on R.summoner1Id = S.summonerId
-		set R.summonerSpellD = S.spellName;
-
-		update RiotGameInfoT R
-		join RiotGameSpellT S
-		on R.summoner2Id = S.summonerId
-		set R.summonerSpellF = S.spellName;
 	</insert>
 	<insert id="RiotGameTeams">
 		insert IGNORE into RiotGameTeamsT values

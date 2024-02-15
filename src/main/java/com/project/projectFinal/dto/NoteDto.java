@@ -11,10 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class NoteDto {
 	private int n_num;
+	private String userId;
 	private String recv_userId;
 	private String send_userId;
 	private String n_title;
 	private String n_message;
 	private Date n_date;
-	private int status;
+	private int read_check;
 }
