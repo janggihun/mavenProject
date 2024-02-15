@@ -39,11 +39,11 @@
 
 
 <!-- 유저 정보 jsp -->
-<%@include file="../stm/StmUserData.jsp" %>
+<%-- <%@include file="../stm/StmUserData.jsp" %> --%>
 <!-- 전적 리스트 jsp -->
 <%@include file="../stm/lolList.jsp" %>
 
-<script defer src ="/js/stm/loldata.js"></script>
-<script defer src="/js/stm/RiotGameTable.js"></script>
+<!-- <script defer src ="/js/stm/loldata.js"></script> -->
+<!-- <script defer src="/js/stm/RiotGameTable.js"></script> -->
 </body>
 </html>

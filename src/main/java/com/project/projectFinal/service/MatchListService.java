@@ -22,10 +22,10 @@ public class MatchListService {
 		  return puuid;
 	}
 
-	public List<String> MatchList(String puuid) {
+	public List<String> MatchList(RiotApiDto apiDto) {
 		
 		
-		List<String>  MList = webmatchListService.MatchList(puuid);
+		List<String>  MList = webmatchListService.MatchList(apiDto);
 		
 		
 		return MList;

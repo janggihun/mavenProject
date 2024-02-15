@@ -25,6 +25,7 @@ public class RiotApiDto {
 	// 송태민 추가
 	private String riotIdGameName;
 	private String gameMode;
+	private int matchCnt;
 	//장기훈추가
 	private String matchIdjustOne;
 	private Integer matchIdCnt;

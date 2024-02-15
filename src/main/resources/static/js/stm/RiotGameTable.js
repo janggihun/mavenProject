@@ -186,7 +186,7 @@ function showGameTamble(res, data) {
 		str += "</div>"
 		str += "<div class='itemlist'>"
 		str += "<div class='tool'>"
-
+		
 		str += "<div class='item1'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/" + item0 + ".png'></div>"
 		str += "<div class='item2'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/" + item1 + ".png'></div>"
 		str += "<div class='item3'><img width='23' height='23'  alt='못 불러옴' src='https://ddragon.leagueoflegends.com/cdn/14.3.1/img/item/" + item2 + ".png'></div>"
@@ -391,13 +391,15 @@ function showGameTamble(res, data) {
 	$('#puuid').show();
 //	let como = 1;
 	$("#loadMore").on("click", function() {
+		console.log("더보기눌림")
+		data['matchCnt']++;
 		$('#loadMore').remove()
 		document.getElementById('asd').append(bbb(data))
-		loadMore.style.top = '30%'
+//		loadMore.style.top = '30%'
 //	ㅁㄴㅇㅁㄴㅇㅁㄴㅇ
 //		$("#asd").append("<p class='original' style='top:32%; position : absolute;;'>등장" + como + "</p>");
 //		como += 1
-		console.log(res.length)
+//		console.log(res.length)
 
 	})
 }

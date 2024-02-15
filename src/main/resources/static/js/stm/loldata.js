@@ -1,7 +1,5 @@
-/**
- * 
- */
 
+//let cnt = 0;
 $(document).ready(function() {
 
 
@@ -9,7 +7,7 @@ $(document).ready(function() {
 
 
 })
-
+let cnt = 0;
 function mainStart() {
 
 	let gameName = $('#gameName').val()
@@ -21,10 +19,13 @@ function mainStart() {
 	}
 }
 function mainSearch(gameName1) {
+	cnt++
+	console.log(cnt)
 	var gameId = gameName1.split('#');
 	let gameName = gameId[0] // 아이디
 	let tagLine = gameId[1] // 태그
-	data = { 'gameName': gameName, 'tagLine': tagLine }
+	let matchCnt = cnt
+	data = { 'gameName': gameName, 'tagLine': tagLine , 'matchCnt':matchCnt}
 	bbb(data)
 }
 
@@ -46,7 +47,7 @@ function searchbtn() {
 }
 
 function searchbtn1() {
-	
+
 	$('#newList').remove()
 	let search = $('#search').val();
 	var gameId = search.split('#');
@@ -71,14 +72,14 @@ function aaa(data) { // data == 검색한 게임 아이디
 }
 
 function bbb(data) {
-
+	console.log(data)
 	$.ajax({
 		type: 'post',
 		url: '/match/list',
 		data: data,
 		//		async: true,
 		success: function(res) {
-			console.log(res)
+			
 			if (res != '') {
 				MList = [];
 				for (let i = 0; i < res.length; i++) {
