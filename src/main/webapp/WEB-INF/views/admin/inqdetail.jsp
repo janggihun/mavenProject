@@ -25,6 +25,7 @@
 					<thead>
 						<tr style="display: none;">
 							<th>번호</th>
+							<td id = "num"></td>
 						</tr>
 						<tr>
 							<th>제목</th>

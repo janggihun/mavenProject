@@ -1,30 +1,30 @@
 @charset "UTF-8";
 .ground{
-	width : 85%;
-	height : 1000px;
-	left : 15%;
+	width : 100%;
+	height : 800px;
 /* 	border: 1px solid black; */
 	position: relative;
-	background-color : hsla(214, 80%, 71%, 0.8);
+	background-color : white;
 /*	background-color : white;*/	
 }
-.left{
-	width : 30%;
-	height : 950px;
-	float : left;
-	border-right : 1px solid white;
-}
+/* .left{ */
+/* 	width : 30%; */
+/* 	height : 950px; */
+/* 	float : left; */
+/* 	border-right : 1px solid white; */
+/* } */
 
 .right{
-	width : 70%;
-	height : 950px;
+	
+	width : 80%;
+	height : 800px;
 	float : right;
 }
 
 .profile{
-	width : 50%;
-	height : 50%;	
-	margin: 5% 00% 2% 10%;
+	width : 40%;
+	height : 400px;	
+	margin: 5% 0% 0% 200px;
 	position: relative;
 	border: 5px solid white;
 	border-radius: 1%;
@@ -32,7 +32,7 @@
 }
 .pline1{
 	width : 98%;
-	height : 7%;
+	height : 10%;
 	margin : 1%;
 	position : relative;
 /* 	border: 1px solid black; */
@@ -61,7 +61,7 @@
 }
 .pline2{
 	width : 98%;
-	height : 16%;
+	height : 17%;
 	margin : 0 auto;
 	position : relative;
 	border-bottom : 1px solid white;
@@ -71,7 +71,7 @@
 }
 .pline3{
 	width : 98%;
-	height : 16%;
+	height : 17%;
 	margin : 0 auto;
 	position : relative;
 /* 	border: 1px solid black; */
@@ -82,7 +82,7 @@
 
 .pline4{
 	width : 98%;
-	height : 16%;
+	height : 17%;
 	margin : 0 auto;
 	position : relative;
 	border-bottom : 1px solid white;
@@ -105,24 +105,27 @@
 }
 .pline5{
 	width : 98%;
-	height : 16%;
+	height : 20%;
 	margin : 0 auto;
 	position : relative;
-/* 	border: 1px solid black; */
+	border-bottom: 1px solid white;
 	text-align: left;
 	color : white;
 	font-size : 30px;
 }
 .cash{
+	margin-top : 28px;
 	float : right;
 }
 .pline5text{
+	margin-top : 28px;
 	float : left;
 }
 
 .pointimg{
-	width : 70px;
-	height : 100%;
+	margin-top: 10px;
+	width : 60px;
+	height : 60px;
 /* 	border-radius : 1%; */
 	position : relative;
 	text-align : left;
@@ -134,7 +137,7 @@
 }
 .pline6{
 	width : 98%;
-	height : 16%;
+	height : 10%;
 	margin : 0.5%;
 	position : relative;
 /* 	border: 1px solid black; */
@@ -143,19 +146,19 @@
 	font-size : 30px;
 }
 .c-txt{
-	width : 50%;
-	height : 5%;
-	margin : 0% 0% 0.5% 10%;
+	width : 40%;
+	height : 40px;
+	margin: 0% 0% 0% 200px;;
 	position: relative;
-	color : white;
+	color : rgba(158, 200, 255, 1);
 	text-align: left;
-	font-size: 30px;
+	font-size: 20px;
 	
 }
 .agree-to-receive{
-	width : 50%;
-	height : 20%;
-	margin: 0% 0% 5% 10%;
+	width : 40%;
+	height : 120px;
+	margin: 0% 0% 5% 200px;
 	position: relative;
 	border: 5px solid white;
 	border-radius: 1%;
@@ -176,14 +179,14 @@
 }
 .phoneimg{
 	width : 30px;
-	height : 50%;
+	height : 30px;
 /* 	border-radius : 1%; */
 	position : relative;
 	text-align : left;
 	background-image: url("https://cdn-icons-png.flaticon.com/128/7344/7344132.png");
 	background-size: cover;
 	float : left;
-	margin : 0.3% 0.5% 0.5% 0.5%;
+	margin : 3px 5px 5px 5px;
 }
 .aline1text{
 	width : 30%;
@@ -202,8 +205,8 @@
 	color: white;
 }
 .emailimg2{
-	width : 30px;
-	height : 50%;
+	width : 40px;
+	height : 40px;
 /* 	border-radius : 1%; */
 	position : relative;
 	text-align : left;
@@ -220,11 +223,11 @@
 /* ------------------------- */
 .on-off-btn{
   float : right;
-  width: 5%;
-  height: 50%;
+  width: 10px;
+  height: 30px;
   text-align: left;
   margin-top : 0.3%;
-  margin-right : 8%;
+  margin-right : 60px;
 }
 #switch {
   position: absolute;

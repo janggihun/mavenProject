@@ -15,7 +15,7 @@
 
 <div id = "memberl">
 </div>
-<input type = "hidden" name = "send_userId" id = "send_userId" value = "${userId}">
+
 <input type = "text" name = "n_title" id = "n_title">
 <textarea name = "n_message" id = "n_message" rows ="4" cols ="50"></textarea>
   

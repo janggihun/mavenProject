@@ -48,11 +48,11 @@
 				<tr class="inqlist" id="inqlist">
 					<td>${item.n_num}</td>
 					<td>${item.send_userId}</td>
-					<td><a href="inqDetailView?n_num=${item.n_num}"">${item.n_title}</a></td>
+					<td>${item.n_title}</td>
 					<td>${item.n_date}</td>
-					<td id="status">${item.status}</td>
-<%-- 					<td style="display: none;">${item.recv_userId}</td> --%>
-<%-- 					<td style="display: none;">${item.n_message}</td> --%>
+					<td>${item.status}</td>
+					<td style="display: none;">${item.recv_userId}</td>
+					<td style="display: none;">${item.n_message}</td>
 				</tr>
 				<input type="hidden" name="${item.recv_userId}"
 					id="${item.recv_userId}">
@@ -62,10 +62,10 @@
 		</tbody>
 	</table>
 
-<!-- 	<!-- 메일 보기 --> -->
-<%-- 	<%@include file="inqdetail.jsp"%> --%>
-<!-- 	<!-- 	문의 답장 --> -->
-<%-- 	<%@include file="inqAnswer.jsp"%> --%>
+	<!-- 메일 보기 -->
+	<%@include file="inqdetail.jsp"%>
+	<!-- 	문의 답장 -->
+	<%@include file="inqAnswer.jsp"%>
 
 
 

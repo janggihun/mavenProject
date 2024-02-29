@@ -8,34 +8,6 @@
 </head>
 <body>
 	<!-- 	<div style="height: 1000px; background: rgba(0, 0, 0, 0);"> -->
-
-	<div class="navbars">
-		<div class="navbarMain">
-			DATABOOM <a href="/">메인으로</a>
-		</div>
-
-		<c:choose>
-			<c:when test="${userId != null}">
-				<div class="navbarLogin">
-					<div class="navChoice">
-						<span>${userId}님</span>
-					</div>
-
-					<!-- 					 <div id="app"></div> -->
-					<div class="navChoice">
-						<a href="/member/logout">로그아웃</a>
-					</div>
-				</div>
-			</c:when>
-			<c:otherwise>
-				<div class="navbarLogin">
-					<a href="/member/login">로그인</a>
-				</div>
-			</c:otherwise>
-		</c:choose>
-
-
-	</div>
 	<div class="ground2">
 		<div class="left"></div>
 		<div class="right">
@@ -45,8 +17,8 @@
 						<p>내 정보</p>
 					</div>
 					<div class="pline1-2">
-						<button type="button" class="changebutton"
-							onclick="location.href='/member/passwordcheck'">정보수정</button>
+<!-- 						<button type="button" class="changebutton" -->
+<!-- 							onclick="location.href='/member/passwordcheck'">정보수정</button> -->
 					</div>
 				</div>
 				<div class="pline2">
@@ -67,7 +39,7 @@
 					</div>
 				</div>
 				<div class="pline6">
-					<p>비밀번호 변경</p>
+					비밀번호 변경
 				</div>
 			</div>
 

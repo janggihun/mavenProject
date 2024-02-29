@@ -51,11 +51,11 @@
 
 <body>
 
-	<%-- 	<%@include file="../inc/header.jsp"%> --%>
+	<%@include file="../inc/header.jsp"%>
 	<div class="ground">
 		<%@include file="../aMain/myPageMain.jsp"%>
 	</div>
-
+	<%@include file="../inc/footer.jsp"%>
 	<!-- js들어갈자리  -->
 
 	<!-- 	<script defer src="/js/jgh/jsduo/duoChatting.js"></script> -->

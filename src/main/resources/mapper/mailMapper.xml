@@ -44,7 +44,7 @@
 	</select>
 
 	<update id="inqAnswer">
-		UPDATE NoteTableT SET n_title = #{n_title}, n_message = #{n_message}, status = #{status} where n_num = #{n_num}
+		UPDATE NoteTableT SET n_title = #{n_title}, n_message = #{n_message}, status = #{status}, n_date =#{n_date} where n_num = #{n_num}
 	</update>
 
 

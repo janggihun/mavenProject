@@ -3,10 +3,10 @@ userId_list = []
 
 //전체메시지 보내기
 $('#sendAll').on("click", function() {
-	send()
+	sendall()
 })
 
-function send() {
+function sendall() {
 	userId_list = []
 	$.ajax({
 
@@ -77,10 +77,10 @@ function inqAnswer() {
 	let n_num = $('#n_num').val()
 //	let recv_userId = $('#recv_userId').val()
 //	let send_userId = $('#send_userId').val()
+	let n_date = $('#n_date').val()
 	let n_title = $('#n_title').val()
 	let n_message = $('#n_message').val()
 	let status = $('#status').val()
-	
 	 // 입력 필드가 비어 있는지 검사
 	    if (!n_title || !n_message) {
         alert("빈칸이 있습니다.");
@@ -89,12 +89,12 @@ function inqAnswer() {
 
 	data = {
 		'n_num' : n_num,
-//		'recv_userId': recv_userId,
-//		'send_userId': send_userId,
+		'n_date' : n_date,
 		'n_title': n_title,
 		'n_message': n_message,
 		'status': status
 	}
+		console.log("test");
 
 	$.ajax({
 

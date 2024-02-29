@@ -13,19 +13,14 @@
 <!-- 			<div class="title"></div> -->
 
 			<div class="modal0-content" id="modal0-body">
-			<input type="hidden" name="n_num" id="n_num" value = "${param.n_num}">
-<!-- 				<input type="hidden" name="send_userId" id="send_userId" -->
-<%-- 					value="${dInq.send_userId }">  --%>
+			<input type="hidden" name="n_num" id="n_num" value = "">
 					<input type="hidden"
 					name="status" id="status" value="답변완료"> 
-<!-- 					<input -->
-<!-- 					type="hidden" name="recv_userId" id="recv_userId" -->
-<%-- 					value="${userId}"> <input type="hidden" --%>
-<!-- 					name="n_date" id="n_date">  -->
-					<input type="hidden" name="n_title" id="n_title" value="Re:${dInq.n_title}">
+ 					<input type="hidden" name="n_date" id="n_date" value = ""> 
+					<input type="text" name="n_title" id="n_title" value="">
 				
 				<textarea rows="6" cols="80" name="n_message" id="n_message">
-				${dInq.n_message }
+				
 				
 
 				</textarea>

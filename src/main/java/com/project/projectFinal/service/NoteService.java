@@ -78,7 +78,6 @@ public class NoteService {
 	}
 
 	public int inqAnswer(NoteDto noteDto) {
-		// TODO Auto-generated method stub
 		int result = noteDao.inqAnswer(noteDto);
 		return result;
 	}
