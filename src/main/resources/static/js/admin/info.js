@@ -2,13 +2,13 @@
 
 userId = $('#userId').val()
 
-console.log(userId)
+//console.log(userId)
 
 if (userId == '') {
 	header = `<a href="/member/login">로그인</a>`
 
 	$('.navbarLogin').html(header)
-	console.log("비회원 입장")
+//	console.log("비회원 입장")
 
 } else {
 	data = { 'userId': userId }
@@ -51,7 +51,7 @@ if (userId == '') {
 					<div class="navChoice">
 						<a href="/member/logout">로그아웃</a>
 					</div`
-
+//				console.log(header)
 			}
 
 
@@ -76,7 +76,7 @@ function checkOfMng(role) {
 					</div>`
 
 	} else if (role == 'CMP-MNG') {
-//		console.log(role)
+		//		console.log(role)
 		header = `<div class="navChoice" >
 						<a href="/member/mypage">${userId}님</a>
 					</div>
@@ -89,7 +89,7 @@ function checkOfMng(role) {
 
 
 	} else if (role == 'PAY-MNG') {
-//		console.log(role)
+		//		console.log(role)
 		header = `<div class="navChoice" >
 					<a href="/member/mypage">${userId}님</a>
 					</div>
@@ -102,7 +102,7 @@ function checkOfMng(role) {
 
 
 	}
-
+	//	console.log(header)
 	return header;
 
 

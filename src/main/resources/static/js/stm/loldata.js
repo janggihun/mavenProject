@@ -1071,7 +1071,7 @@ function clickOnLoadMore(int) {
 	})
 	if (testList.length == 0) {
 
-		alert("데이터가 없거나 로딩중입니다. ")
+
 		return false;
 	}
 	//	console.log("만들기 시작")
