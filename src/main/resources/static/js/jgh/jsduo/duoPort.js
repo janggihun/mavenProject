@@ -19,10 +19,7 @@ ws.addEventListener("message", (event) => {
 		let userId = $('#userId').val()
 		console.log(userId)
 		if (eventjson.userId == userId) {
-
 			createQuestion(eventjson)
-
-
 		}
 
 
@@ -66,9 +63,6 @@ ws.addEventListener("message", (event) => {
 			document.getElementById('request').value = '';
 		}
 
-
 	}
-
-
 
 });
