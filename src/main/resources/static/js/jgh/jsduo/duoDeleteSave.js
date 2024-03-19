@@ -2,12 +2,19 @@
 
 $('#duoSaveBtn').on("click", function() {
 
+
 	let userId = $('#userId').val()
 	let myPosition = $('#myPosition').val()
 	let duoPosition = $('#duoPosition').val()
 	let tier = $('#tier').val()
 	let gameType = $('#gameType').val()
 	let memo = $('#memo').val()
+	if (userId == '') {
+		modalOff()
+		alert("회원만 가능합니다.")
+
+		return false;
+	}
 
 	if (myPosition == '포지션' || duoPosition == 'undefined' || tier == '필수선택' || gameType == '필수선택' || memo == '') {
 

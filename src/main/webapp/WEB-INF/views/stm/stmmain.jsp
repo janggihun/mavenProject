@@ -59,7 +59,7 @@
 	<script defer src="/js/kdg/item/allItemTT.js"></script>
 
 
-	<!-- <script defer src="/js/stm/RiotGameTable.js"></script> -->
-	<%-- 	<%@include file="../inc/footer.jsp"%> --%>
+<!-- 	<script defer src="/js/stm/RiotGameTable.js"></script> -->
+		<%@include file="../inc/footer.jsp"%>
 </body>
 </html>

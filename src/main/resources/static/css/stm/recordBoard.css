@@ -105,9 +105,14 @@ html, body {
 
 .containerXCF {
 	display: flex;
+/* 	height : 700px;  */
 	flex-direction: column;
-}
+/* 	overflow:auto; */
 
+}
+/* .containerXCF::-webkit-scrollbar { */
+/*   display: none; */
+/* } */
 .graph1 {
 	font-family: 'Jua', sans-serif;
 	display: flex;
